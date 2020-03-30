@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Inherits="truevalueauction.Pages.AddNewItem" %>
+﻿<%@ Page Language="C#" CodeBehind="AddNewItem.aspx.cs" Inherits="truevalueauction.Pages.AddNewItem" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

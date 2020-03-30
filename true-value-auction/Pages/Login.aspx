@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Inherits="truevalueauction.Pages.Login" %>
+﻿<%@ Page Language="C#" CodeBehind="Login.aspx.cs" Inherits="truevalueauction.Pages.Login" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
