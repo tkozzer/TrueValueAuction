@@ -37,6 +37,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\CreateAccount.aspx" />
+    <Content Include="Pages\AddNewItem.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -59,6 +60,12 @@
     </Compile>
     <Compile Include="Pages\CreateAccount.aspx.designer.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddNewItem.aspx.cs">
+      <DependentUpon>AddNewItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddNewItem.aspx.designer.cs">
+      <DependentUpon>AddNewItem.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
