@@ -67,9 +67,12 @@
     <Compile Include="Pages\AddNewItem.aspx.designer.cs">
       <DependentUpon>AddNewItem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\LoginValidator.cs" />
+    <Compile Include="App_Code\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="App_Code\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
