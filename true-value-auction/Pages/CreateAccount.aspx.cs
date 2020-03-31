@@ -10,11 +10,14 @@ namespace truevalueauction.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            txtUsername.Text = (string)Session["UserName"];
+
         }
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            
+
             User user = new User(txtUsername.Text, txtPassword.Text);
 
             user.SetFirstName(txtFirstName.Text);

@@ -33,8 +33,16 @@ namespace truevalueauction.Pages
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-          
+
+
+            if (txtUsername.Text != string.Empty)
+            {
+                Session["UserName"] = txtUsername.Text;
+            }
             Response.Redirect("CreateAccount.aspx");
+           
+
+
             
         }
     }
