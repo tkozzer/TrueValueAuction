@@ -20,8 +20,7 @@ namespace truevalueauction.Pages
             bool userNameValid = LoginValidator.userNameIsValid(user);
             bool passwordValid = LoginValidator.passwordIsValid(user);
 
-            //if (userNameValid && passwordValid)
-            if(true)
+            if (userNameValid && passwordValid)
             {
                 Response.Redirect("Home.aspx");
             }
@@ -34,7 +33,9 @@ namespace truevalueauction.Pages
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+          
             Response.Redirect("CreateAccount.aspx");
+            
         }
     }
 }

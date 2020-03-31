@@ -217,7 +217,7 @@
             <tr>
                 <td class="auto-style15"></td>
                 <td class="auto-style17">
-                    <asp:Button ID="btnCreateAccount" runat="server" CssClass="auto-style19" Text="Create Account" />
+                    <asp:Button ID="btnCreateAccount" runat="server" CssClass="auto-style19" Text="Create Account" OnClick="btnCreateAccount_Click" />
                 </td>
                 <td class="auto-style14"></td>
             </tr>

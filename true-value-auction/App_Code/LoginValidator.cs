@@ -17,9 +17,6 @@ namespace truevalueauction.App_Code
             char first = userName[0];
             bool valid = true;
 
-            
-
-
             if (!char.IsLetter(first))
             {
                 valid = false;
@@ -90,13 +87,6 @@ namespace truevalueauction.App_Code
             }
             return false;
         }
-
-
-
-
-
-
-
 
     }
 }
