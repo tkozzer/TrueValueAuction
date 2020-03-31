@@ -15,7 +15,7 @@
             margin-right: 0px;
         }
         .auto-style36 {
-            width: 216px;
+            width: 473px;
         }
         .auto-style42 {
             width: 83px;
@@ -35,17 +35,20 @@
             width: 124px;
         }
         .auto-style47 {
-            width: 216px;
+            width: 473px;
             text-align: center;
         }
         .auto-style48 {
-            width: 149%;
+            width: 100%;
         }
-        .auto-style49 {
-            width: 131px;
+        .auto-style51 {
+            width: 171px;
         }
-        .auto-style50 {
-            width: 39px;
+        .auto-style53 {
+            margin-left: 0px;
+        }
+        .auto-style54 {
+            width: 216px;
         }
     </style>
 </head>
@@ -64,7 +67,7 @@
                         <tr>
                             <td class="auto-style42">Username:</td>
                             <td class="auto-style43">
-                    <asp:TextBox ID="txtUsername" runat="server" Height="16px"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" Height="16px" Width="222px"></asp:TextBox>
                             </td>
                             <td class="auto-style44">
                     <asp:Label ID="lblUserNameError" runat="server"></asp:Label>
@@ -73,7 +76,7 @@
                         <tr>
                             <td class="auto-style45">Password:</td>
                             <td class="auto-style46">
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="221px"></asp:TextBox>
                             </td>
                             <td>
                     <asp:Label ID="lblPasswordError" runat="server"></asp:Label>
@@ -88,22 +91,22 @@
                 <td class="auto-style36">
                     <table class="auto-style48">
                         <tr>
-                            <td class="auto-style49">&nbsp;</td>
-                            <td class="auto-style50">&nbsp;</td>
+                            <td class="auto-style51">&nbsp;</td>
+                            <td class="auto-style54">&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style49">
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="130px" />
+                            <td class="auto-style51">
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="170px" />
                             </td>
-                            <td class="auto-style50">&nbsp;</td>
+                            <td class="auto-style54">&nbsp;</td>
                             <td>
-                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" Width="141px" />
+                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" Width="170px" CssClass="auto-style53" />
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style49">&nbsp;</td>
-                            <td class="auto-style50">&nbsp;</td>
+                            <td class="auto-style51">&nbsp;</td>
+                            <td class="auto-style54">&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                     </table>
