@@ -33,12 +33,6 @@
         .auto-style14 {
             height: 94px;
         }
-        .auto-style15 {
-            width: 272px;
-            height: 44px;
-            font-size: xx-large;
-            margin-left: 541px;
-        }
         .auto-style16 {
             height: 40px;
             width: 768px;
@@ -51,13 +45,40 @@
             width: 711px;
             height: 40px;
         }
+        .auto-style19 {
+            width: 100%;
+            height: 92px;
+        }
+        .auto-style20 {
+            width: 507px;
+        }
+        .auto-style21 {
+            width: 307px;
+        }
+        .auto-style22 {
+            width: 507px;
+            height: 30px;
+        }
+        .auto-style23 {
+            width: 307px;
+            height: 30px;
+            text-align: center;
+        }
+        .auto-style24 {
+            height: 30px;
+        }
     </style>
 </head>
 <body style="height: 159px">
     <form id="form1" runat="server">
         <div class="auto-style14">
-            <div class="auto-style15">
-                True Value Auctions</div>
+            <table class="auto-style19">
+                <tr>
+                    <td class="auto-style22"></td>
+                    <td class="auto-style23">True Value Auctions</td>
+                    <td class="auto-style24"></td>
+                </tr>
+            </table>
         </div>
         <table class="auto-style1">
             <tr>
