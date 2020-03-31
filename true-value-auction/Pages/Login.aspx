@@ -4,103 +4,113 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style1 {
+        .auto-style34 {
             width: 100%;
-            height: 370px;
-            margin-top: 0px;
+            height: 372px;
         }
-        .auto-style4 {
-            height: 73px;
-            width: 417px;
+        .auto-style35 {
+            width: 100%;
+            height: 76px;
+            margin-right: 0px;
         }
-        .auto-style5 {
-            height: 73px;
+        .auto-style36 {
+            width: 216px;
         }
-        .auto-style6 {
-            width: 711px;
-            height: 73px;
+        .auto-style42 {
+            width: 83px;
+            height: 1px;
         }
-        .auto-style12 {
-            width: 711px;
+        .auto-style43 {
+            width: 124px;
+            height: 1px;
         }
-        .auto-style13 {
-            width: 417px;
+        .auto-style44 {
+            height: 1px;
         }
-        .auto-style26 {
-            height: 28px;
-            width: 417px;
+        .auto-style45 {
+            width: 83px;
         }
-        .auto-style28 {
-            width: 711px;
-            height: 28px;
+        .auto-style46 {
+            width: 124px;
         }
-        .auto-style29 {
-            height: 73px;
+        .auto-style47 {
+            width: 216px;
             text-align: center;
         }
-        .auto-style30 {
-            height: 28px;
+        .auto-style48 {
+            width: 149%;
         }
-        .auto-style32 {
-            height: 4px;
-            width: 417px;
+        .auto-style49 {
+            width: 131px;
         }
-        .auto-style33 {
-            height: 4px;
-        }
-        .auto-style34 {
-            width: 711px;
-            height: 4px;
+        .auto-style50 {
+            width: 39px;
         }
     </style>
 </head>
 <body style="height: 376px">
     <form id="form1" runat="server">
-        <table class="auto-style1">
+        <table class="auto-style34">
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style29">
-                    <h1>True Value Auctions</h1>
-                </td>
-                <td class="auto-style6">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="auto-style47">TrueValue Auction</td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4"></td>
-                <td class="auto-style5">
-                    <p>User Login</p>
-                </td>
-                <td class="auto-style6"></td>
-            </tr>
-            <tr>
-                <td class="auto-style32"></td>
-                <td class="auto-style33">
-                    Username:
-                </td>
-                <td class="auto-style34">
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                <td>&nbsp;</td>
+                <td class="auto-style36">
+                    <table class="auto-style35">
+                        <tr>
+                            <td class="auto-style42">Username:</td>
+                            <td class="auto-style43">
+                    <asp:TextBox ID="txtUsername" runat="server" Height="16px"></asp:TextBox>
+                            </td>
+                            <td class="auto-style44">
                     <asp:Label ID="lblUserNameError" runat="server"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td class="auto-style26"></td>
-                <td class="auto-style30">
-                    Password:
-                </td>
-                <td class="auto-style28">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style45">Password:</td>
+                            <td class="auto-style46">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                            </td>
+                            <td>
                     <asp:Label ID="lblPasswordError" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style13">&nbsp;</td>
-                <td>
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" />
+                <td>&nbsp;</td>
+                <td class="auto-style36">
+                    <table class="auto-style48">
+                        <tr>
+                            <td class="auto-style49">&nbsp;</td>
+                            <td class="auto-style50">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style49">
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="130px" />
+                            </td>
+                            <td class="auto-style50">&nbsp;</td>
+                            <td>
+                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" Width="141px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style49">&nbsp;</td>
+                            <td class="auto-style50">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
                 </td>
-                <td class="auto-style12">
-                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" Width="100px" />
-                </td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </form>
 </body>
 </html>
+
