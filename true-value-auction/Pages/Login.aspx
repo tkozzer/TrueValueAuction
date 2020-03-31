@@ -42,13 +42,11 @@
             width: 100%;
         }
         .auto-style51 {
-            width: 171px;
+            width: 50%;
         }
         .auto-style53 {
             margin-left: 0px;
-        }
-        .auto-style54 {
-            width: 216px;
+            width: 100%;
         }
     </style>
 </head>
@@ -92,21 +90,18 @@
                     <table class="auto-style48">
                         <tr>
                             <td class="auto-style51">&nbsp;</td>
-                            <td class="auto-style54">&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
                             <td class="auto-style51">
-                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="170px" />
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="auto-style53" />
                             </td>
-                            <td class="auto-style54">&nbsp;</td>
                             <td>
-                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" Width="170px" CssClass="auto-style53" />
+                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" CssClass="auto-style53" />
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style51">&nbsp;</td>
-                            <td class="auto-style54">&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                     </table>
