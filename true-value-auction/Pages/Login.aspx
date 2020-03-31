@@ -11,76 +11,58 @@
         }
         .auto-style4 {
             height: 73px;
-            width: 768px;
+            width: 417px;
         }
         .auto-style5 {
-            width: 138px;
             height: 73px;
         }
         .auto-style6 {
             width: 711px;
             height: 73px;
         }
-        .auto-style11 {
-            width: 138px;
-        }
         .auto-style12 {
             width: 711px;
         }
         .auto-style13 {
-            width: 768px;
+            width: 417px;
         }
-        .auto-style14 {
-            height: 94px;
+        .auto-style26 {
+            height: 28px;
+            width: 417px;
         }
-        .auto-style16 {
-            height: 40px;
-            width: 768px;
-        }
-        .auto-style17 {
-            width: 138px;
-            height: 40px;
-        }
-        .auto-style18 {
+        .auto-style28 {
             width: 711px;
-            height: 40px;
+            height: 28px;
         }
-        .auto-style19 {
-            width: 100%;
-            height: 92px;
-        }
-        .auto-style20 {
-            width: 507px;
-        }
-        .auto-style21 {
-            width: 307px;
-        }
-        .auto-style22 {
-            width: 507px;
-            height: 30px;
-        }
-        .auto-style23 {
-            width: 307px;
-            height: 30px;
+        .auto-style29 {
+            height: 73px;
             text-align: center;
         }
-        .auto-style24 {
-            height: 30px;
+        .auto-style30 {
+            height: 28px;
+        }
+        .auto-style32 {
+            height: 4px;
+            width: 417px;
+        }
+        .auto-style33 {
+            height: 4px;
+        }
+        .auto-style34 {
+            width: 711px;
+            height: 4px;
         }
     </style>
 </head>
-<body style="height: 159px">
+<body style="height: 376px">
     <form id="form1" runat="server">
-        <div class="auto-style14">
-            <table class="auto-style19">
-                <tr>
-                    <td class="auto-style22"></td>
-                    <td class="auto-style23">True Value Auctions</td>
-                    <td class="auto-style24"></td>
-                </tr>
-            </table>
-        </div>
         <table class="auto-style1">
+            <tr>
+                <td class="auto-style4">&nbsp;</td>
+                <td class="auto-style29">
+                    True Value Auctions</td>
+                <td class="auto-style6">&nbsp;</td>
+            </tr>
             <tr>
                 <td class="auto-style4"></td>
                 <td class="auto-style5">
@@ -89,28 +71,28 @@
                 <td class="auto-style6"></td>
             </tr>
             <tr>
-                <td class="auto-style16"></td>
-                <td class="auto-style17">
-                    <p>Username:</p>
+                <td class="auto-style32"></td>
+                <td class="auto-style33">
+                    Username:
                 </td>
-                <td class="auto-style18">
+                <td class="auto-style34">
                     <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     <asp:Label ID="lblUserNameError" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style16"></td>
-                <td class="auto-style17">
-                    <p>Password:</p>
+                <td class="auto-style26"></td>
+                <td class="auto-style30">
+                    Password:
                 </td>
-                <td class="auto-style18">
+                <td class="auto-style28">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:Label ID="lblPasswordError" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style13">&nbsp;</td>
-                <td class="auto-style11">
+                <td>
                     <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="100px" />
                 </td>
                 <td class="auto-style12">
