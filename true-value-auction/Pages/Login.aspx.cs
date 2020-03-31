@@ -20,15 +20,21 @@ namespace truevalueauction.Pages
             bool userNameValid = LoginValidator.userNameIsValid(user);
             bool passwordValid = LoginValidator.passwordIsValid(user);
 
-            if (userNameValid && passwordValid)
+            //if (userNameValid && passwordValid)
+            if(true)
             {
-                Response.Redirect("Pages/Home.aspx");
+                Response.Redirect("Home.aspx");
             }
             else
             {
-
+                lblPasswordError.Text = "Please enter a valid Username/Password";
             }
 
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateAccount.aspx");
         }
     }
 }

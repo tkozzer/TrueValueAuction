@@ -38,6 +38,7 @@
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\CreateAccount.aspx" />
     <Content Include="Pages\AddNewItem.aspx" />
+    <Content Include="Pages\Home.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -69,6 +70,12 @@
     </Compile>
     <Compile Include="App_Code\LoginValidator.cs" />
     <Compile Include="App_Code\User.cs" />
+    <Compile Include="Pages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

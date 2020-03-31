@@ -10,7 +10,7 @@
             height: 372px;
         }
         .auto-style35 {
-            width: 100%;
+            width: 133%;
             height: 76px;
             margin-right: 0px;
         }
@@ -55,7 +55,7 @@
         <table class="auto-style34">
             <tr>
                 <td>&nbsp;</td>
-                <td class="auto-style47">TrueValue Auction</td>
+                <td class="auto-style47"><h1>TrueValue Auction</h1></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -77,7 +77,7 @@
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="221px"></asp:TextBox>
                             </td>
                             <td>
-                    <asp:Label ID="lblPasswordError" runat="server"></asp:Label>
+                    <asp:Label ID="lblPasswordError" ForeColor="Crimson" runat="server"></asp:Label>
                             </td>
                         </tr>
                     </table>
@@ -97,7 +97,7 @@
                     <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="auto-style53" />
                             </td>
                             <td>
-                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" CssClass="auto-style53" />
+                    <asp:Button ID="btnRegister" runat="server" Text="Sign Up!" CssClass="auto-style53" OnClick="btnRegister_Click" />
                             </td>
                         </tr>
                         <tr>
