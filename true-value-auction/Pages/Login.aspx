@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" CodeBehind="Login.aspx.cs" Inherits="truevalueauction.Pages.Login" %>
+<%@ Page Language="C#" CodeBehind="Login.aspx.cs" Inherits="truevalueauction.Pages.Login" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -60,7 +60,8 @@
             <tr>
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style29">
-                    True Value Auctions</td>
+                    <h1>True Value Auctions</h1>
+                </td>
                 <td class="auto-style6">&nbsp;</td>
             </tr>
             <tr>

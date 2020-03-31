@@ -17,8 +17,14 @@ namespace truevalueauction.Pages {
 		
 		protected System.Web.UI.WebControls.TextBox txtUsername;
 		
+		protected System.Web.UI.WebControls.Label lblUserNameError;
+		
 		protected System.Web.UI.WebControls.TextBox txtPassword;
 		
+		protected System.Web.UI.WebControls.Label lblPasswordError;
+		
 		protected System.Web.UI.WebControls.Button btnLogin;
+		
+		protected System.Web.UI.WebControls.Button btnRegister;
 	}
 }
