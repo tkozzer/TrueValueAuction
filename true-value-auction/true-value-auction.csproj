@@ -76,6 +76,10 @@
     <Compile Include="Pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\IValidator.cs" />
+    <Compile Include="App_Code\Validator.cs" />
+    <Compile Include="App_Code\InputTypes.cs" />
+    <Compile Include="App_Code\AccountValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

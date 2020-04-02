@@ -13,6 +13,11 @@ namespace truevalueauction.App_Code
         private Address address;
         
 
+        public User()
+        {
+
+        }
+
         public User(string userName, string password)
         {
             this.userName = userName;

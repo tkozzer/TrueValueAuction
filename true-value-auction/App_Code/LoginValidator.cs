@@ -3,13 +3,40 @@ using System;
 
 namespace truevalueauction.App_Code
 {
-    public class LoginValidator
+    public class LoginValidator : Validator
     {
+        
+
+        public LoginValidator(User user) : base(user)
+        {
+            this.newUser = true;
+
+        }
+
+        public LoginValidator(User user, bool newUser) : this(user)
+        {
+            this.newUser = newUser;
+        }
+
+        public override User GetUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SetUser(User user)
+        {
+            this.user = user;
+        }
+
+        public override void SetNewUser(bool newUser)
+        {
+            this.newUser = newUser;
+        }
 
         /**
-         * Check to see the user is already registered or if it is a new
+         * <summary>Check to see the user is already registered or if it is a new
          * user then it will check to make sure that the username is a
-         * valid entry
+         * valid entry</summary>
          *
          * <param name="user">User object, must not be null</param>
          * <param name="newUser">bool to check if it's a new user</param>
@@ -18,8 +45,9 @@ namespace truevalueauction.App_Code
          *
          * 
          */
-        public static bool UserNameIsValid(User user, bool newUser)
+        private bool CheckUserName(bool newUser)
         {
+            this.newUser = newUser;
             string userName;
             bool letter = true, length = true ;
 
@@ -49,12 +77,12 @@ namespace truevalueauction.App_Code
             return valid;
         }
 
-        /*
-         * Check to see if the password is atleast 8 character long, has an atleast
-         * uppercase, symbol, and a number
+        /**
+         * <summary>Check to see if the password is atleast 8 character long, has an atleast
+         * uppercase, symbol, and a number</summary>
          *
          */
-        public static bool PasswordIsValid(User user, bool newUser)
+        private bool CheckPassword(bool newUser)
         {
             string password;
             bool symbol, number, upper, valid;
@@ -77,12 +105,6 @@ namespace truevalueauction.App_Code
             }
 
             return valid;
-        }
-
-        public static string handleExceptions(User user)
-        {
-
-            return "test";
         }
 
         private static bool checkString(string password, string check)
@@ -119,6 +141,33 @@ namespace truevalueauction.App_Code
             }
             return false;
         }
+
+        public override bool IsValid(params InputTypes[] inputTypes)
+        {
+            bool isValid = false;
+            foreach(InputTypes element in inputTypes)
+            {
+                switch(element)
+                {
+                    case InputTypes.Username:
+                        isValid = CheckUserName(this.newUser);
+                        break;
+                    case InputTypes.Password:
+                        isValid = CheckPassword(this.newUser);
+                        break;
+                    //case InputTypes.FirstName:
+                    //    isValid = CheckFirstName();
+                    //    break;
+                    //case InputTypes.LastName:
+                    //    isValid = CheckUserName();
+                    //    break;
+                    default:
+                        throw new ArgumentException();
+                }
+            }
+            return isValid;
+        }
+
 
     }
 }
