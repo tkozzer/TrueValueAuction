@@ -54,7 +54,6 @@ namespace truevalueauction.App_Code
             this.address = address;
         }
 
-       
 
     }
 

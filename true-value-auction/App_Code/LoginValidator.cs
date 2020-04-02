@@ -20,7 +20,7 @@ namespace truevalueauction.App_Code
 
         public override User GetUser()
         {
-            throw new NotImplementedException();
+            return user;
         }
 
         public override void SetUser(User user)
@@ -45,17 +45,17 @@ namespace truevalueauction.App_Code
          *
          * 
          */
-        private bool CheckUserName(bool newUser)
+        private bool CheckUserName()
         {
-            this.newUser = newUser;
+
             string userName;
-            bool letter = true, length = true ;
+            bool letter = true, length = true , hasSymbol = false;
 
             if (user == null) throw new ArgumentException();
             userName = user.GetUserName();
             if (userName == string.Empty) return false;
 
-            bool valid = true;
+            bool valid = false;
             if (newUser)
             {
                 if (!char.IsLetter(userName[0]))
@@ -66,7 +66,10 @@ namespace truevalueauction.App_Code
                 {
                     length = false;
                 }
-                valid = letter && length;
+
+                hasSymbol = CheckString(CheckTypes.Symbol);
+
+                valid = letter && length && !hasSymbol;
             }
             else
             {
@@ -82,22 +85,23 @@ namespace truevalueauction.App_Code
          * uppercase, symbol, and a number</summary>
          *
          */
-        private bool CheckPassword(bool newUser)
+        private bool CheckPassword()
         {
             string password;
-            bool symbol, number, upper, valid;
+            bool symbol, number, upper, lower, valid;
 
             if (user == null) throw new ArgumentException();
             password = user.GetPassword();
             if (password == string.Empty) return false;
 
-            valid = true;
+            valid = false;
             if (newUser)
             {
-                symbol = checkString(password, "symbol");
-                number = checkString(password, "number");
-                upper = checkString(password, "upper");
-                valid = (symbol && number && upper);
+                symbol = CheckString(CheckTypes.Symbol);
+                number = CheckString(CheckTypes.Number);
+                upper = CheckString(CheckTypes.Upper);
+                lower = CheckString(CheckTypes.Lower);
+                valid = (symbol && number && upper && lower);
             }
             else
             {
@@ -107,65 +111,24 @@ namespace truevalueauction.App_Code
             return valid;
         }
 
-        private static bool checkString(string password, string check)
-        {
-            switch(check)
-            {
-                case "symbol":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsSymbol(password[i]) || char.IsPunctuation(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-                case "upper":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsUpper(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-                case "number":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsNumber(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-            }
-            return false;
-        }
-
         public override bool IsValid(params InputTypes[] inputTypes)
         {
-            bool isValid = false;
+            bool valid = false;
             foreach(InputTypes element in inputTypes)
             {
                 switch(element)
                 {
                     case InputTypes.Username:
-                        isValid = CheckUserName(this.newUser);
+                        valid = CheckUserName();
                         break;
                     case InputTypes.Password:
-                        isValid = CheckPassword(this.newUser);
+                        valid = CheckPassword();
                         break;
-                    //case InputTypes.FirstName:
-                    //    isValid = CheckFirstName();
-                    //    break;
-                    //case InputTypes.LastName:
-                    //    isValid = CheckUserName();
-                    //    break;
                     default:
                         throw new ArgumentException();
                 }
             }
-            return isValid;
+            return valid;
         }
 
 
