@@ -6,26 +6,45 @@ namespace truevalueauction.App_Code
     public class LoginValidator
     {
 
-        /*
-         * Check to make sure the the user name is atleast 6 characters and doesn't
-         * start with a number or symbol
+        /**
+         * Check to see the user is already registered or if it is a new
+         * user then it will check to make sure that the username is a
+         * valid entry
+         *
+         * <param name="user">User object, must not be null</param>
+         * <param name="newUser">bool to check if it's a new user</param>
+         *
+         * <exception cref="ArgumentException">thrown if user is null</exception>
+         *
+         * 
          */
-        public static bool userNameIsValid(User user)
+        public static bool UserNameIsValid(User user, bool newUser)
         {
-            string userName = user.GetUserName();
+            string userName;
+            bool letter = true, length = true ;
+
+            if (user == null) throw new ArgumentException();
+            userName = user.GetUserName();
             if (userName == string.Empty) return false;
-            char first = userName[0];
+
             bool valid = true;
-
-            if (!char.IsLetter(first))
+            if (newUser)
             {
-                valid = false;
+                if (!char.IsLetter(userName[0]))
+                {
+                    letter = false;
+                }
+                if (userName.Length < 6)
+                {
+                    length = false;
+                }
+                valid = letter && length;
+            }
+            else
+            {
+                // Code for checking the database to see if user exists
             }
 
-            if(userName.Length < 6)
-            {
-                valid = false;
-            }
 
             return valid;
         }
@@ -35,16 +54,29 @@ namespace truevalueauction.App_Code
          * uppercase, symbol, and a number
          *
          */
-        public static bool passwordIsValid(User user)
+        public static bool PasswordIsValid(User user, bool newUser)
         {
-            string password = user.GetPassword();
+            string password;
+            bool symbol, number, upper, valid;
+
+            if (user == null) throw new ArgumentException();
+            password = user.GetPassword();
             if (password == string.Empty) return false;
 
-            bool symbol = checkString(password, "symbol");
-            bool number = checkString(password, "number");
-            bool upper = checkString(password, "upper");
+            valid = true;
+            if (newUser)
+            {
+                symbol = checkString(password, "symbol");
+                number = checkString(password, "number");
+                upper = checkString(password, "upper");
+                valid = (symbol && number && upper);
+            }
+            else
+            {
+                // Code for checking the database to see if user exists
+            }
 
-            return (symbol && number && upper);
+            return valid;
         }
 
         public static string handleExceptions(User user)

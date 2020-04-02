@@ -1,5 +1,6 @@
 ﻿using System;
 using truevalueauction.App_Code;
+using System.Diagnostics;
 using System.Web;
 using System.Web.UI;
 
@@ -24,12 +25,14 @@ namespace truevalueauction.Pages
             user.SetLastName(txtLastName.Text);
             user.SetEmail(txtEmail.Text);
 
+  
+
             Address address = new Address(txtAdress1.Text + txtAdress2.Text, txtCity.Text, txtState.Text, txtZipCode.Text);
 
             user.SetAddress(address);
 
-            bool userNameValid = LoginValidator.userNameIsValid(user);
-            bool passwordValid = LoginValidator.passwordIsValid(user);
+            bool userNameValid =  LoginValidator.UserNameIsValid(user, true);
+            bool passwordValid =  LoginValidator.PasswordIsValid(user, true);
 
             if(userNameValid && passwordValid)
             {

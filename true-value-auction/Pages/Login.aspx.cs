@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using truevalueauction.App_Code;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace truevalueauction.Pages
 {
@@ -11,14 +13,16 @@ namespace truevalueauction.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("This is test");
             User user = new User(txtUsername.Text, txtPassword.Text);
 
-            bool userNameValid = LoginValidator.userNameIsValid(user);
-            bool passwordValid = LoginValidator.passwordIsValid(user);
+            bool userNameValid = LoginValidator.UserNameIsValid(user, false);
+            bool passwordValid = LoginValidator.PasswordIsValid(user, false);
 
             if (userNameValid && passwordValid)
             {

@@ -17,6 +17,7 @@ namespace truevalueauction.App_Code
         {
             this.userName = userName;
             this.password = password;
+
         }
 
         public string GetUserName()
