@@ -35,6 +35,16 @@ namespace truevalueauction.App_Code
             return password;
         }
 
+        public string GetFirstName()
+        {
+            return firstName;
+        }
+
+        public string GetLastName()
+        {
+            return lastName;
+        }
+
         public void SetFirstName(string firstName)
         {
             this.firstName = firstName;

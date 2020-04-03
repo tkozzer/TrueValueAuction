@@ -1,5 +1,4 @@
-﻿using System;
-namespace truevalueauction.App_Code
+﻿namespace truevalueauction.App_Code
 {
     public enum InputTypes
     {

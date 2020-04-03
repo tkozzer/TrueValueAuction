@@ -65,7 +65,7 @@
                         <tr>
                             <td class="auto-style42">Username:</td>
                             <td class="auto-style43">
-                    <asp:TextBox ID="txtUsername" runat="server" Height="16px" Width="222px"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" Height="16px" Width="222px" InputType="Username"></asp:TextBox>
                             </td>
                             <td class="auto-style44">
                     <asp:Label ID="lblUserNameError" runat="server"></asp:Label>

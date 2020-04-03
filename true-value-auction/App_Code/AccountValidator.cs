@@ -27,18 +27,18 @@ namespace truevalueauction.App_Code
         {
             bool valid = false;
 
-            foreach (InputTypes input in inputTypes)
-            {
-                if (input is InputTypes.Username || input is InputTypes.Password)
-                {
-                    LoginValidator lv = new LoginValidator(this.user);
-                    valid = lv.IsValid(input);
-                }
-                else
-                {
-                    valid = CheckValidity(input);
-                }
-            }
+            //foreach (InputTypes input in inputTypes)
+            //{
+            //    if (input is App_Code.InputTypes.Username || input is App_Code.InputTypes.Password)
+            //    {
+            //        //LoginValidator lv = new LoginValidator(this.user, true);
+            //        //valid = lv.IsValid(input);
+            //    }
+            //    else
+            //    {
+            //        valid = CheckValidity(input);
+            //    }
+            //}
             return valid;
         }
 
@@ -50,7 +50,7 @@ namespace truevalueauction.App_Code
             {
                 case InputTypes.FirstName:
                 case InputTypes.LastName:
-                    CheckName();
+                    CheckName(input);
                     break;
                 case InputTypes.Email:
 
@@ -69,6 +69,24 @@ namespace truevalueauction.App_Code
                     throw new ArgumentException();
             }
 
+            return valid;
+        }
+
+        private bool CheckName(InputTypes input)
+        {
+            string firstName = user.GetFirstName();
+            string lastName = user.GetLastName();
+            bool valid = false;
+
+            if(input == InputTypes.FirstName)
+            {
+                valid = !CheckString(CheckTypes.Symbol);
+            }
+
+            if(input == InputTypes.LastName)
+            {
+
+            }
             return valid;
         }
     }

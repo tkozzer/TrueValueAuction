@@ -1,5 +1,4 @@
-﻿using truevalueauction.App_Code;
-using System;
+﻿using System;
 
 namespace truevalueauction.App_Code
 {
@@ -9,7 +8,7 @@ namespace truevalueauction.App_Code
 
         public LoginValidator(User user) : base(user)
         {
-            this.newUser = true;
+            this.newUser = false;
 
         }
 
@@ -38,8 +37,6 @@ namespace truevalueauction.App_Code
          * user then it will check to make sure that the username is a
          * valid entry</summary>
          *
-         * <param name="user">User object, must not be null</param>
-         * <param name="newUser">bool to check if it's a new user</param>
          *
          * <exception cref="ArgumentException">thrown if user is null</exception>
          *
@@ -95,13 +92,15 @@ namespace truevalueauction.App_Code
             if (password == string.Empty) return false;
 
             valid = false;
-            if (newUser)
+            if (true)
             {
-                symbol = CheckString(CheckTypes.Symbol);
-                number = CheckString(CheckTypes.Number);
-                upper = CheckString(CheckTypes.Upper);
-                lower = CheckString(CheckTypes.Lower);
-                valid = (symbol && number && upper && lower);
+                valid = CheckString(CheckTypes.Password);
+
+                //symbol = CheckString(CheckTypes.Symbol);
+                //number = CheckString(CheckTypes.Number);
+                //upper = CheckString(CheckTypes.Upper);
+                //lower = CheckString(CheckTypes.Lower);
+                //valid = (symbol && number && upper && lower);
             }
             else
             {
