@@ -30,6 +30,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="smartystreets-dotnet-sdk">
+      <HintPath>..\packages\smartystreets-dotnet-sdk.8.4.1\lib\net40\smartystreets-dotnet-sdk.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -39,6 +42,8 @@
     <Content Include="Pages\CreateAccount.aspx" />
     <Content Include="Pages\AddNewItem.aspx" />
     <Content Include="Pages\Home.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Web.SECRETS.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -80,10 +85,13 @@
     <Compile Include="App_Code\Validator.cs" />
     <Compile Include="App_Code\InputTypes.cs" />
     <Compile Include="App_Code\AccountValidator.cs" />
+    <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
+    <Compile Include="App_Code\Utilities\AddressAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="App_Code\" />
+    <Folder Include="App_Code\Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

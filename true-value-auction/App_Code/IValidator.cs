@@ -6,6 +6,6 @@ namespace truevalueauction.App_Code
         User GetUser();
         void SetUser(User user);
         void SetNewUser(bool newUser);
-        bool IsValid(params InputTypes[] inputTypes);
+        bool IsValid(InputTypes input);
     }
 }

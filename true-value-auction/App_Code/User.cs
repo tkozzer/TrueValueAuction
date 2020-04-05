@@ -11,7 +11,7 @@ namespace truevalueauction.App_Code
         private string lastName;
         private string email;
         private Address address;
-        
+
 
         public User()
         {
@@ -45,6 +45,16 @@ namespace truevalueauction.App_Code
             return lastName;
         }
 
+        public string GetEmail()
+        {
+            return email;
+        }
+
+        public Address GetAddress()
+        {
+            return address;
+        }
+
         public void SetFirstName(string firstName)
         {
             this.firstName = firstName;
@@ -69,17 +79,44 @@ namespace truevalueauction.App_Code
 
     public class Address
     {
-        private string address;
+        private string address1;
+        private string address2;
         private string city;
         private string state;
         private string zipCode;
 
-        public Address(string address, string city, string state, string zipCode)
+        public Address(string address1, string address2, string city, string state, string zipCode)
         {
-            this.address = address;
+            this.address1 = address1;
+            this.address2 = address2;
             this.city = city;
             this.state = state;
             this.zipCode = zipCode;
+        }
+
+        public string GetAddress1()
+        {
+            return address1;
+        }
+
+        public string GetAddress2()
+        {
+            return address2;
+        }
+
+        public string GetCity()
+        {
+            return city;
+        }
+
+        public string GetState()
+        {
+            return state;
+        }
+
+        public string getZipCode()
+        {
+            return zipCode;
         }
     }
 }

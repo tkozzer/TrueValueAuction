@@ -40,10 +40,9 @@ namespace truevalueauction.Pages
 
             if (txtUsername.Text != string.Empty)
             {
-                Session["UserName"] = txtUsername.Text;
+                Session["Username"] = txtUsername.Text;
                 Session["User"] = v.GetUser();
             }
-            Session["NewUser"] = true;
             Response.Redirect("CreateAccount.aspx");
             
         }

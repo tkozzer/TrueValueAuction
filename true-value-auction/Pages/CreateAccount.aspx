@@ -87,7 +87,7 @@
             <tr>
                 <td class="auto-style7"></td>
                 <td class="auto-style11">
-                    <asp:Label ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
+                    <span>First Name:</span>
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="txtFirstName" runat="server" InputType="FirstName"></asp:TextBox>
@@ -97,7 +97,7 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
+                    <span>Last Name:</span>
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtLastName" runat="server" InputType="LastName"></asp:TextBox>
@@ -107,7 +107,7 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+                    <span>Email:</span>
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtEmail" runat="server" InputType="Email"></asp:TextBox>
@@ -117,7 +117,7 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
+                    <span>Username:</span>
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtUsername" runat="server" InputType="Username"></asp:TextBox>
@@ -133,50 +133,50 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblAddressLine1" runat="server" Text="Adress Line 1:"></asp:Label>
+                    <span>Address Line 1:</span>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtAdress1" runat="server" InputType="Address1"></asp:TextBox>
+                    <asp:TextBox ID="txtAdress1" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblAddressLine2" runat="server" Text="Adress Line 2:"></asp:Label>
+                    <span>Address Line 2:</span>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtAdress2" runat="server" InputType="Address2"></asp:TextBox>
+                    <asp:TextBox ID="txtAdress2" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblCity" runat="server" Text="City:"></asp:Label>
+                    <span>City:</span>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtCity" runat="server" InputType="City"></asp:TextBox>
+                    <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblState" runat="server" Text="State:"></asp:Label>
+                    <span>State:</span>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtState" runat="server" InputType="State"></asp:TextBox>
+                    <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblZip" runat="server" Text="Zip Code:"></asp:Label>
+                    <span>Zip Code:</span>
                 </td>
                 <td class="auto-style10">
-                    <asp:TextBox ID="txtZipCode" runat="server" InputType="ZipCode"></asp:TextBox>
+                    <asp:TextBox ID="txtZipCode" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -189,7 +189,7 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
+                    <span>Password:</span>
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" InputType="Password"></asp:TextBox>
@@ -199,7 +199,7 @@
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password: "></asp:Label>
+                    <span>Confirm Password:</span>
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" InputType="ConfirmPassword"></asp:TextBox>

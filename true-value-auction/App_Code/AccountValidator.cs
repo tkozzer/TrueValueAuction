@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using truevalueauction.App_Code.Utilities;
 namespace truevalueauction.App_Code
 {
     public class AccountValidator : Validator
@@ -23,71 +25,25 @@ namespace truevalueauction.App_Code
             this.newUser = newUser;
         }
 
-        public override bool IsValid(params InputTypes[] inputTypes)
+        public override bool IsValid(InputTypes type)
         {
-            bool valid = false;
-
-            //foreach (InputTypes input in inputTypes)
-            //{
-            //    if (input is App_Code.InputTypes.Username || input is App_Code.InputTypes.Password)
-            //    {
-            //        //LoginValidator lv = new LoginValidator(this.user, true);
-            //        //valid = lv.IsValid(input);
-            //    }
-            //    else
-            //    {
-            //        valid = CheckValidity(input);
-            //    }
-            //}
-            return valid;
-        }
-
-        private bool CheckValidity(InputTypes input)
-        {
-            bool valid = false;
-
-            switch(input)
+            if (type == InputTypes.Username || type == InputTypes.Password) return base.IsValid(type);
+            Regex re = new Regex(InputTypeValue.Value(type));
+            switch (type)
             {
                 case InputTypes.FirstName:
+                    return re.IsMatch(user.GetFirstName());
                 case InputTypes.LastName:
-                    CheckName(input);
-                    break;
+                    return re.IsMatch(user.GetLastName());
                 case InputTypes.Email:
-
-                    break;
-                case InputTypes.Address1:
-                    break;
-                case InputTypes.Address2:
-                    break;
-                case InputTypes.City:
-                    break;
-                case InputTypes.State:
-                    break;
-                case InputTypes.ZipCode:
-                    break;
+                    return RegexUtilities.IsValidEmail(user.GetEmail());
+                case InputTypes.FullAddress:
+                    return AddressAPI.IsAddressValid(user);
                 default:
-                    throw new ArgumentException();
+                    return false;
             }
 
-            return valid;
         }
 
-        private bool CheckName(InputTypes input)
-        {
-            string firstName = user.GetFirstName();
-            string lastName = user.GetLastName();
-            bool valid = false;
-
-            if(input == InputTypes.FirstName)
-            {
-                valid = !CheckString(CheckTypes.Symbol);
-            }
-
-            if(input == InputTypes.LastName)
-            {
-
-            }
-            return valid;
-        }
     }
 }
