@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Web.Configuration;
 using System.Diagnostics;
 using System.IO;
@@ -11,11 +12,14 @@ namespace truevalueauction.App_Code.Utilities
     {
         public static bool IsAddressValid(Address address)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var authId = WebConfigurationManager.AppSettings["SMARTY_AUTH_ID"];
             var authToken = WebConfigurationManager.AppSettings["SMARTY_AUTH_TOKEN"];
 
             var client = new ClientBuilder(authId, authToken)
-                //.WithCustomBaseUrl("us-street.api.smartystreets.com")
+                //.WithCustomBaseUrl("https://us-street.api.smartystreets.com")
                 //.ViaProxy("http://localhost:8080", "username", "password") // uncomment this line to point to the specified proxy.
                 .BuildUsStreetApiClient();
 

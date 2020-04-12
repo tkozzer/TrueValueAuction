@@ -54,6 +54,7 @@
         }
         .auto-style18 {
             width: 321px;
+            align-content: center;
         }
         .auto-style19 {
             margin-left: 126px;
@@ -91,6 +92,7 @@
                 </td>
                 <td class="auto-style9">
                     <asp:TextBox ID="txtFirstName" runat="server" InputType="FirstName"></asp:TextBox>
+                    <asp:Label ID="lblFirstNameError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style3"></td>
             </tr>
@@ -101,6 +103,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtLastName" runat="server" InputType="LastName"></asp:TextBox>
+                    <asp:Label ID="lblLastNameError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -111,6 +114,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtEmail" runat="server" InputType="Email"></asp:TextBox>
+                    <asp:Label ID="lblEmailError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -121,6 +125,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtUsername" runat="server" InputType="Username"></asp:TextBox>
+                    <asp:Label ID="lblUsernameError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -137,6 +142,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtAdress1" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblAddressLine1Error" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -147,6 +153,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtAdress2" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblAddressLine2Error" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -157,6 +164,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblCityError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -167,6 +175,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtState" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblStateError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -177,13 +186,16 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtZipCode" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblZipCodeError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style8">&nbsp;</td>
                 <td class="auto-style12">&nbsp;</td>
-                <td class="auto-style10">&nbsp;</td>
+                <td class="auto-style10">
+                    <asp:Label ID="lblFullAddressError" runat="server" ForeColor="Red"></asp:Label>
+                </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
             <tr>
@@ -193,6 +205,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" InputType="Password"></asp:TextBox>
+                    <asp:Label ID="lblPasswordError" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -203,6 +216,7 @@
                 </td>
                 <td class="auto-style10">
                     <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" InputType="ConfirmPassword"></asp:TextBox>
+                    <asp:Label ID="lblConfirmPassword" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td class="auto-style4">&nbsp;</td>
             </tr>
@@ -223,7 +237,9 @@
             </tr>
             <tr>
                 <td class="auto-style16">&nbsp;</td>
-                <td class="auto-style18">&nbsp;</td>
+                <td class="auto-style18">
+                    <asp:Label ID="lblGeneralError" Width="100%" Style="align-content:center" runat="server" ForeColor="Red"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
