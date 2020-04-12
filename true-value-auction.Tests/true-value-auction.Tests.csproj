@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -25,6 +25,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="smartystreets-dotnet-sdk, Version=8.4.1.0, Culture=neutral, PublicKeyToken=8aedc8db7bfc0ea6, processorArchitecture=MSIL">
+      <HintPath>..\packages\smartystreets-dotnet-sdk.8.4.1\lib\net40\smartystreets-dotnet-sdk.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
