@@ -1,24 +1,28 @@
 ﻿using System;
+using System.Diagnostics;
 using truevalueauction.App_Code;
-using System.Web;
-using System.Web.UI;
+using IValidator = truevalueauction.App_Code.IValidator;
 
 namespace truevalueauction.Pages
 {
 
     public partial class Login : System.Web.UI.Page
     {
+        IValidator v;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            v = new LoginValidator(new User(), false);
 
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = new User(txtUsername.Text, txtPassword.Text);
+            v.SetUser(new User(txtUsername.Text, txtPassword.Text));
 
-            bool userNameValid = LoginValidator.userNameIsValid(user);
-            bool passwordValid = LoginValidator.passwordIsValid(user);
+            bool userNameValid = v.IsValid(InputTypes.Username);
+            bool passwordValid = v.IsValid(InputTypes.Password);
+
 
             if (userNameValid && passwordValid)
             {
@@ -36,7 +40,8 @@ namespace truevalueauction.Pages
 
             if (txtUsername.Text != string.Empty)
             {
-                Session["UserName"] = txtUsername.Text;
+                Session["Username"] = txtUsername.Text;
+                Session["User"] = v.GetUser();
             }
             Response.Redirect("CreateAccount.aspx");
             

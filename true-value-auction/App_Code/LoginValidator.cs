@@ -1,93 +1,42 @@
-﻿using truevalueauction.App_Code;
-using System;
+﻿using System;
 
 namespace truevalueauction.App_Code
 {
-    public class LoginValidator
+    public class LoginValidator : Validator
     {
+        
 
-        /*
-         * Check to make sure the the user name is atleast 6 characters and doesn't
-         * start with a number or symbol
-         */
-        public static bool userNameIsValid(User user)
+        public LoginValidator(User user) : base(user)
         {
-            string userName = user.GetUserName();
-            if (userName == string.Empty) return false;
-            char first = userName[0];
-            bool valid = true;
+            this.newUser = false;
 
-            if (!char.IsLetter(first))
-            {
-                valid = false;
-            }
-
-            if(userName.Length < 6)
-            {
-                valid = false;
-            }
-
-            return valid;
         }
 
-        /*
-         * Check to see if the password is atleast 8 character long, has an atleast
-         * uppercase, symbol, and a number
-         *
-         */
-        public static bool passwordIsValid(User user)
+        public LoginValidator(User user, bool newUser) : this(user)
         {
-            string password = user.GetPassword();
-            if (password == string.Empty) return false;
-
-            bool symbol = checkString(password, "symbol");
-            bool number = checkString(password, "number");
-            bool upper = checkString(password, "upper");
-
-            return (symbol && number && upper);
+            this.newUser = newUser;
         }
 
-        public static string handleExceptions(User user)
+        public override User GetUser()
         {
-
-            return "test";
+            return user;
         }
 
-        private static bool checkString(string password, string check)
+        public override void SetUser(User user)
         {
-            switch(check)
-            {
-                case "symbol":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsSymbol(password[i]) || char.IsPunctuation(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-                case "upper":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsUpper(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-                case "number":
-                    for (int i = 0; i < password.Length; i++)
-                    {
-                        if (char.IsNumber(password[i]))
-                        {
-                            return true;
-                        }
-                    }
-                    break;
-            }
-            return false;
+            this.user = user;
         }
 
+        public override void SetNewUser(bool newUser)
+        {
+            this.newUser = newUser;
+        }
+
+        public override bool IsValid(InputTypes input)
+        {
+            if (newUser) return false;
+            return base.IsValid(input);
+        }
     }
 }
 
