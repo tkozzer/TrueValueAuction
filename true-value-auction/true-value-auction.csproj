@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <UseIISExpress>true</UseIISExpress>
+    <TargetFrameworkProfile />
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -46,7 +47,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -62,7 +62,6 @@
       <DependentUpon>Users.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Pages\ViewAllItems.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -118,13 +117,6 @@
     <Compile Include="App_Code\AccountValidator.cs" />
     <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
-    <Compile Include="Pages\ViewAllItems.aspx.cs">
-      <DependentUpon>ViewAllItems.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\ViewAllItems.aspx.designer.cs">
-      <DependentUpon>ViewAllItems.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.SECRETS.config" />
