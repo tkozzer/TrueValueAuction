@@ -69,6 +69,7 @@
     <Content Include="Pages\AddNewItem.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Pages\ViewAllItems.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -117,6 +118,12 @@
     <Compile Include="App_Code\AccountValidator.cs" />
     <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
+    <Compile Include="Pages\ViewAllItems.aspx.cs">
+      <DependentUpon>ViewAllItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewAllItems.aspx.designer.cs">
+      <DependentUpon>ViewAllItems.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.SECRETS.config" />
