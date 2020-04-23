@@ -65,6 +65,7 @@
                     <td class="auto-style2">Item Name:</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtItemName" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblNameError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -79,8 +80,11 @@
                     <td class="auto-style2">General Item Description:</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtDesc" runat="server" Height="95px" Width="206px"></asp:TextBox>
+                        <asp:Label ID="lblDescriptionError" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblGeneralError" runat="server"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -113,6 +117,7 @@
                     <td class="auto-style3">Bid Starting Price:</td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtStartingPrice" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblStartingPriceError" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style1"></td>
                 </tr>
@@ -127,6 +132,7 @@
                     <td class="auto-style2">Bid Length in days (less than 10):</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtBidLength" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblBidLengthError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -141,6 +147,7 @@
                     <td class="auto-style2">Shipping Height</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtShipHeight" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblShipHeightError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -155,6 +162,7 @@
                     <td class="auto-style2">Shipping Length</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtShipLength" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblShipLengthError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -169,6 +177,7 @@
                     <td class="auto-style3">Shipping Depth</td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtShipDepth" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblShipDepthError" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style1">&nbsp;</td>
                 </tr>
@@ -183,6 +192,7 @@
                     <td class="auto-style2">Shipping Weight</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtShipWeight" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblShipWeightError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -197,6 +207,7 @@
                     <td class="auto-style10">Shipping Cost:</td>
                     <td class="auto-style11">
                         <asp:TextBox ID="txtShipCost" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblShipCostError" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>
@@ -211,6 +222,7 @@
                     <td class="auto-style2">Add an image:</td>
                     <td class="auto-style7">
                         <asp:FileUpload ID="fileImage" runat="server" />
+                        <asp:Label ID="lblImageError" runat="server"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
