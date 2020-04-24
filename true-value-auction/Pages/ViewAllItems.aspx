@@ -9,9 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            View All Items<asp:GridView ID="grdVwItems" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="NewItemDataSource" ForeColor="#333333" GridLines="None">
+            View All Items<asp:GridView ID="grdVwItems" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="NewItemDataSource" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="grdVwItems_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
+                    <asp:CommandField ShowSelectButton="True" />
                     <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
                     <asp:BoundField DataField="StartingPrice" HeaderText="StartingPrice" SortExpression="StartingPrice" />
                     <asp:BoundField DataField="LengthDays" HeaderText="LengthDays" SortExpression="LengthDays" />
