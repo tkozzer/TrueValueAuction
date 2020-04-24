@@ -133,6 +133,7 @@
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
     <Compile Include="Pages\ViewAllItems.aspx.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ViewAllItems.aspx.designer.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>
