@@ -64,6 +64,10 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Pages\forgot-username-or-password.aspx" />
+    <Content Include="Pages\Test.aspx" />
+    <Content Include="Theme\bootstrap.min.css" />
+    <Content Include="Theme\bootstrap.min.js" />
+    <Content Include="Theme\glyphicons-halflings-regular.svg" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -129,6 +133,13 @@
     <Compile Include="App_Code\AccountValidator.cs" />
     <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
+    <Compile Include="Pages\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewAllItems.aspx.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>
     </Compile>
@@ -137,6 +148,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Theme\bootstrap.min.css.map" />
+    <Content Include="Theme\glyphicons-halflings-regular.eot" />
+    <Content Include="Theme\glyphicons-halflings-regular.ttf" />
+    <Content Include="Theme\glyphicons-halflings-regular.woff" />
+    <Content Include="Theme\glyphicons-halflings-regular.woff2" />
     <None Include="Web.SECRETS.config" />
   </ItemGroup>
   <ItemGroup />
