@@ -26,6 +26,11 @@ namespace truevalueauction.App_Code
             this.newUser = newUser;
         }
 
+        public override bool EmailExists()
+        {
+            return CheckDatabase(InputTypes.Email); 
+        }
+
         public override bool IsValid(InputTypes type)
         {
             if (type == InputTypes.Email || type == InputTypes.Password) return base.IsValid(type);

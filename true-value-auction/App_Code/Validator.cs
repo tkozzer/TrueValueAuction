@@ -35,22 +35,29 @@ namespace truevalueauction.App_Code
 
         }
 
-        private bool CheckDatabase(InputTypes type)
+        protected bool CheckDatabase(InputTypes type)
         {
-            // Dummy code until database is configured
             if(type == InputTypes.Email)
             {
-                return user.GetEmail() != string.Empty ? true : false;
-
-            } else
-            {
-                return user.GetPassword() != string.Empty ? true : false;
+                return true;
             }
+            
+            // Dummy code until database is configured
+            //if(type == InputTypes.Email)
+            //{
+            //    return user.GetEmail() != string.Empty ? true : false;
+
+            //} else
+            //{
+            //    return user.GetPassword() != string.Empty ? true : false;
+            //}
+            return false;
         }
 
         public abstract void SetNewUser(bool newUser);
         public abstract User GetUser();
         public abstract void SetUser(User user);
+        public abstract bool EmailExists();
 
     }
 }

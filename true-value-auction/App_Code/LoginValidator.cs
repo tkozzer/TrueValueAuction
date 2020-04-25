@@ -37,6 +37,11 @@ namespace truevalueauction.App_Code
             if (newUser) return false;
             return base.IsValid(input);
         }
+
+        public override bool EmailExists()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

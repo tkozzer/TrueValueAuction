@@ -22,10 +22,18 @@ namespace truevalueauction.Pages
             }
 
             string target = Request["__EVENTTARGET"];
-            if (target == "btn")
+            if (target == "btnRegister")
             {
                 v = new AccountValidator(new App_Code.User());
                 btnRegister_Click(sender, e);
+            }
+            else if (target == "btnLogin")
+            {
+                v = new LoginValidator(new User(), false);
+                btnLogin_Click(sender, e);
+            } else
+            {
+                v = new LoginValidator(new App_Code.User(), false);
             }
 
         }
@@ -44,7 +52,7 @@ namespace truevalueauction.Pages
             }
             else
             {
-                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\">Please enter a valid Username / Password</div>";
+                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\">Please enter a valid Email/Password</div>";
             }
 
         }
@@ -61,7 +69,7 @@ namespace truevalueauction.Pages
             {
                 if (txtRegisterPassword.Text != txtRegisterConfirmPassword.Text)
                 {
-                    throw new ArgumentException("Test");
+                    throw new ArgumentException("Please make sure your passwords match");
                 }
 
                 InputTypes[] modalTypes = { InputTypes.FirstName, InputTypes.Email, InputTypes.Password };
@@ -69,6 +77,11 @@ namespace truevalueauction.Pages
                 {
                     valid = v.IsValid(type);
                     if (!valid) error.Add(type);
+                }
+
+                if (v.EmailExists())
+                {
+                    throw new ArgumentException("This email already exists");
                 }
 
                 if (error.Count == 0 && valid)
@@ -83,7 +96,7 @@ namespace truevalueauction.Pages
             }
             catch (ArgumentException ex)
             {
-                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\"> Registration Error: " + ex.Message + "</div>";
+                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\"><span style:\"font-weight: bold;\"> Registration Error: </span>" + ex.Message + "</div>";
 
             }
 

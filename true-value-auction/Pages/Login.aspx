@@ -13,9 +13,9 @@
         <div class="nav text-center" style="background-color: #345eeb; color: white">
             <h1>True Value Auctions</h1>
         </div>
-        <div class="container text-center" style="padding: 50px; background-color: #cecece">
+        <div id="container1" class="container text-center" style="padding: 50px; background-color: #cecece">
             <asp:Literal ID="alertBody" runat="server"></asp:Literal>
-            <div class="form-group">
+            <div id="form-group1" class="form-group">
                 <label class="h3">Email</label>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control txtBox" TextMode="Email" Width="50%"></asp:TextBox>
             </div>
@@ -25,7 +25,9 @@
             </div>
             <br />
             <div class="text-center">
-                <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-default" Text="Login" Width="100px" OnClick="btnLogin_Click" />
+                <button id="btnLogin" type="button" class="btn btn-default" data-target="#myModal" style="width: 100px">
+                    Login
+                </button>
                 <span style="margin-left: 10px">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="width: 100px">
                         Register
@@ -64,54 +66,19 @@
                             - At least two numbers [0-9]
                             <br />
                             - At Least two special characters [!@#$%^&*]
+                            <br />
+                            - At least 9 characters
                         </span>
                     </div>
                     <div class="modal-footer">
-                        <button id="btn" type="button" class="btn btn-primary">Register</button>
-                        <asp:Button ID="btnRegister" CssClass="btn btn-primary" runat="server" Text="Sign Up!" OnClick="btnRegister_Click" />
+                        <button id="btnRegister" type="button" class="btn btn-primary">Register</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-    <script>
-        var alert = document.getElementById('alert');
-        console.log(alert);
-        if (document.getElementById('alert') !== null) {
-            console.log("alertLiteral not empty");
-            setTimeout(() => document.querySelector('.alert').remove(), 5000)
-        };
-
-        var firstName = document.getElementById('txtRegisterFirstName');
-        var email = document.getElementById('txtRegisterEmail');
-        var password = document.getElementById('txtRegisterPassword');
-        var confirmPassword = document.getElementById('txtRegisterConfirmPassword');
-
-        document.getElementById('btn').addEventListener("click", () => {
-            if (firstName.value === "" || email.value === "" || password.value === "" || confirmPassword.value === "") {
-                showAlert('Please make sure all fields are filled in');
-            } else if (password.value != confirmPassword.value) {
-                showAlert("Please make sure your passwords match");
-            } else {
-                __doPostBack('btn', 'Click');
-            }
-        })
-
-
-        function showAlert(message) {
-            const div = document.createElement('div');
-            div.className = 'alert alert-danger';
-            div.id = 'alertModal';
-            div.appendChild(document.createTextNode(message));
-            const modalBody = document.querySelector('.modal-body');
-            const h3 = document.querySelector('#fn');
-            modalBody.insertBefore(div, h3);
-
-            //Vanish in 5 seconds
-            setTimeout(() => document.querySelector('#alertModal').remove(), 5000);
-        }
-    </script>
+    <script src="../Scripts/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../Theme/bootstrap.min.js"></script>
 </body>

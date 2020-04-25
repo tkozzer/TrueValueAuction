@@ -64,6 +64,7 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Pages\forgot-username-or-password.aspx" />
+    <Content Include="Scripts\login.js" />
     <Content Include="Theme\bootstrap.min.css" />
     <Content Include="Theme\bootstrap.min.js" />
     <Content Include="Theme\glyphicons-halflings-regular.svg" />
