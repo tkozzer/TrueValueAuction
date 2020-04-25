@@ -11,7 +11,11 @@ namespace truevalueauction.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ClientScript.GetPostBackEventReference(this, string.Empty);
+            if (Page.IsPostBack)
+            {
+                alertForgot.Text = "<div ID=\"alert\" class=\"alert alert-success\"><div class:\"h3\"><strong> Success </strong></div>Please check your email</div>";
+            }
         }
     }
 }

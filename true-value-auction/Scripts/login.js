@@ -15,7 +15,9 @@ var loginPassword = document.getElementById('txtPassword');
 
 document.getElementById('btnLogin').addEventListener("click", () => {
     if (loginEmail.value === '' || loginPassword.value === '') {
-        showAlert("Please enter make sure all fields are filled in", "alertBody");
+        showAlert("Please make sure all fields are filled in", "alertBody", null);
+    } else if (!email.value.includes("@")) {
+        showAlert("Please make sure you enter a valid email address", 'alertBody', null);
     } else {
         __doPostBack('btnLogin', 'Click');
     }
@@ -23,16 +25,21 @@ document.getElementById('btnLogin').addEventListener("click", () => {
 
 document.getElementById('btnRegister').addEventListener("click", () => {
     if (firstName.value === "" || email.value === "" || password.value === "" || confirmPassword.value === "") {
-        showAlert('Please make sure all fields are filled in', 'alertModal');
+        showAlert('Please make sure all fields are filled in', 'alertModal', null);
     } else if (password.value != confirmPassword.value) {
-        showAlert("Please make sure your passwords match", 'alertModal');
+        showAlert("Please make sure your passwords match", 'alertModal', null);
+    } else if (password.value.length < 9) {
+        showAlert("Please make sure you password is atleast 9 characters", 'alertModal', null);
+    } else if (!email.value.includes("@")) {
+        showAlert("Please make sure you enter a valid email address", 'alertModal', null);
     } else {
         __doPostBack('btnRegister', 'Click');
     }
 })
 
 
-function showAlert(message, id) {
+
+function showAlert(message, id, className) {
     if (id === 'alertModal') {
         const div = document.createElement('div');
         div.className = 'alert alert-danger';

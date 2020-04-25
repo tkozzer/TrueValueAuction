@@ -52,7 +52,7 @@
                         <label id="fn" class="h3">First Name</label>
                         <asp:TextBox ID="txtRegisterFirstName" runat="server" CssClass="form-control txtBox-Register"></asp:TextBox>
                         <label class="h3">Email</label>
-                        <asp:TextBox ID="txtRegisterEmail" runat="server" CssClass="form-control txtBox-Register" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="txtRegisterEmail" runat="server" CssClass="form-control txtBox-Register" TextMode="Email" type="email"></asp:TextBox>
                         <label class="h3">Password</label>
                         <asp:TextBox ID="txtRegisterPassword" runat="server" CssClass="form-control txtBox-Register" TextMode="Password"></asp:TextBox>
                         <label class="h3">Confirm Password</label>

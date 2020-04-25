@@ -10,22 +10,25 @@
 </head>
 <body>
     <form style="height: 300px" runat="server">
-        <div class="container text-center main-container">
-
-            <div class="text-center">
+        <div id="container1" class="container text-center main-container">
+            <asp:Literal ID="alertForgot" runat="server"></asp:Literal>
+            <div id="div1" class="text-center">
                 <div class="text-center" style="font-weight: bold; font-size: 30px">
                     Please enter your email address
                 </div>
             </div>
             <div class="form-group">
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control txtBox"></asp:TextBox>
+                <asp:TextBox ID="txtForgotEmail" runat="server" CssClass="form-control txtBox" TextMode="Email"></asp:TextBox>
             </div>
             <div class="text-center">
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-default" />
+                <input id="btnSubmit" type="button" value="Submit" class="btn btn-default" style="width: 150px"/>
+            </div>
+            <div class="text-center" style="margin-top: 10px">
+                <asp:HyperLink ID="linkToLogin" runat="server" CssClass="forgotLogin" NavigateUrl="~/Pages/login.aspx">Go Back to Login</asp:HyperLink>
             </div>
         </div>
     </form>
-    <script src="../Scripts/login.js"></script>
+    <script src="../Scripts/forgot-password.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../Theme/bootstrap.min.js"></script>
 </body>

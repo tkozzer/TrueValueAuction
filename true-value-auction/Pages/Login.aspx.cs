@@ -96,7 +96,7 @@ namespace truevalueauction.Pages
             }
             catch (ArgumentException ex)
             {
-                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\"><span style:\"font-weight: bold;\"> Registration Error: </span>" + ex.Message + "</div>";
+                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\"><div class:\"h3\"><strong> Registration Error </strong></div>" + ex.Message + "</div>";
 
             }
 
