@@ -1,15 +1,13 @@
-﻿
-using System;
+﻿using System;
 
 namespace truevalueauction.App_Code
 {
     public class User
     {
-        private string userName;
+        private string email;
         private string password;
         private string firstName;
         private string lastName;
-        private string email;
         private Address address;
 
 
@@ -18,16 +16,10 @@ namespace truevalueauction.App_Code
 
         }
 
-        public User(string userName, string password)
+        public User(string email, string password)
         {
-            this.userName = userName;
+            this.email = email;
             this.password = password;
-
-        }
-
-        public string GetUserName()
-        {
-            return userName;
         }
 
         public string GetPassword()

@@ -45,7 +45,7 @@ namespace truevalueauction.Pages
 
             if (user.GetPassword() != txtConfirmPassword.Text) error.Add(InputTypes.ConfirmPassword);
 
-            InputTypes[] totalTypes = { InputTypes.Username, InputTypes.FirstName, InputTypes.LastName, InputTypes.Email, InputTypes.FullAddress, InputTypes.Password };
+            InputTypes[] totalTypes = { InputTypes.Email, InputTypes.FirstName, InputTypes.LastName, InputTypes.Email, InputTypes.FullAddress, InputTypes.Password };
             v.SetUser(user);
             foreach(InputTypes type in totalTypes)
             {

@@ -2,12 +2,11 @@
 {
     public enum InputTypes
     {
-        Username,
+        Email,
         Password,
         ConfirmPassword,
         FirstName,
         LastName,
-        Email,
         FullAddress
     }
 
@@ -22,12 +21,6 @@
         private static readonly string passwordValue = @"^(?=.*[a-z].*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d.*\d)(?=.*\W.*\W)[a-zA-Z0-9\S]{9,20}$";
 
         /*
-         *A regexp for general username entry. Which doesn't allow special characters other than underscore.
-         * Username must be of length ranging(5-20). starting letter should be a number or a character.
-         */
-        private static readonly string usernameValue = @"^[a-zA-Z0-9][a-zA-Z0-9_]{5,20}$";
-
-        /*
          * Regex for first and last names. Checks for all letter characters plus a series of other
          * special characters including [.,'-]. Examples: Mathias d'Arras, Martin Luther King, Jr., plus any
          * hypeneated last name.
@@ -39,10 +32,9 @@
         {
             switch(inputType)
             {
-                case InputTypes.Password: return passwordValue;
-                case InputTypes.Username: return usernameValue;
                 case InputTypes.FirstName:
                 case InputTypes.LastName: return nameValue;
+                case InputTypes.Password: return passwordValue;
                 default: return "";
             }
             

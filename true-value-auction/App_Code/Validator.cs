@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net.Mail;
 using truevalueauction.App_Code.Utilities;
+using truevalueauction.App_Code;
 using System.Text.RegularExpressions;
 
 namespace truevalueauction.App_Code
@@ -25,8 +26,8 @@ namespace truevalueauction.App_Code
             
             switch (type)
             {
-                case InputTypes.Username:
-                    return newUser ? re.IsMatch(user.GetUserName()) : CheckDatabase(type);
+                case InputTypes.Email:
+                    return newUser ? RegexUtilities.IsValidEmail(user.GetEmail()) : CheckDatabase(type);
                 case InputTypes.Password:
                     return newUser ? re.IsMatch(user.GetPassword()) : CheckDatabase(type);
                 default: return false;
@@ -37,9 +38,9 @@ namespace truevalueauction.App_Code
         private bool CheckDatabase(InputTypes type)
         {
             // Dummy code until database is configured
-            if(type == InputTypes.Username)
+            if(type == InputTypes.Email)
             {
-                return user.GetUserName() != string.Empty ? true : false;
+                return user.GetEmail() != string.Empty ? true : false;
 
             } else
             {
