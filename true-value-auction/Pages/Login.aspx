@@ -13,7 +13,7 @@
         <div class="nav text-center" style="background-color: #345eeb; color: white">
             <h1>True Value Auctions</h1>
         </div>
-        <div id="container1" class="container text-center" style="padding: 50px; background-color: #cecece">
+        <div id="container1" class="container text-center main-container" style="padding: 50px; background-color: #cecece">
             <asp:Literal ID="alertBody" runat="server"></asp:Literal>
             <div id="form-group1" class="form-group">
                 <label class="h3">Email</label>
