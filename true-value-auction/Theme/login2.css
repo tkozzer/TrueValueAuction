@@ -5,19 +5,39 @@
 
 .main-container {
     background-color: #e0e0e0;
-    margin: 7em auto;
+    margin: 5em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    padding: 50px;
+}
+
+.nav-main {
+    background-color: #345eeb;
+    color: white;
+    font-size: 75px;
+    margin-top: 1em
 }
 
 .txtBox {
     text-align: center;
     margin-left: 25%;
     border-radius: 10px;
+    width: 50%
 }
 
 .txtBox-Register {
     border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+    .nav-main {
+        font-size: 50px;
+    }
+
+    .txtBox {
+        width: 90%;
+        margin-left: 5%
+    }
 }
 
 
@@ -74,14 +94,14 @@
 
 .forgotLogin {
     font-family: 'Raleway', sans-serif;
-    font-size:12px;
-    text-decoration:none;
+    font-size: 12px;
+    text-decoration: none;
     color: black;
 }
 
-.forgotLogin:hover {
+    .forgotLogin:hover {
         color: #345eeb;
-}
+    }
 
 .auto-style34 {
     width: 100%;
@@ -105,7 +125,6 @@
 
 .auto-style43 {
     width: 124px;
-    
 }
 
 .auto-style44 {

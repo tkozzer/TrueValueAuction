@@ -6,22 +6,22 @@
 <head runat="server">
     <title>Login</title>
     <link href="../Theme/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Theme/login.css" rel="stylesheet" />
+    <link href="../Theme/login2.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="nav text-center" style="background-color: #345eeb; color: white">
-            <h1>True Value Auctions</h1>
+        <div class="nav text-center nav-main">
+            True Value Auctions
         </div>
-        <div id="container1" class="container text-center main-container" style="padding: 50px; background-color: #cecece">
+        <div id="container1" class="container text-center main-container" >
             <asp:Literal ID="alertBody" runat="server"></asp:Literal>
             <div id="form-group1" class="form-group">
                 <label class="h3">Email</label>
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control txtBox" TextMode="Email" Width="50%"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control txtBox" TextMode="Email"></asp:TextBox>
             </div>
             <div class="form-group">
                 <label class="h3">Password</label>
-                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control txtBox" TextMode="Password" Width="50%"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control txtBox" TextMode="Password"></asp:TextBox>
             </div>
             <br />
             <div class="text-center">
@@ -35,7 +35,7 @@
                 </span>
             </div>
             <div style="text-align: center; margin-top: 10px">
-                <asp:HyperLink ID="linkForgottenLogin" runat="server" CssClass="forgotLogin" NavigateUrl="~/Pages/forgot-username-or-password.aspx">Fogot Username/Password</asp:HyperLink>
+                <asp:HyperLink ID="linkForgottenLogin" runat="server" CssClass="forgotLogin" NavigateUrl="~/Pages/forgot-password.aspx">Forgot Password</asp:HyperLink>
             </div>
         </div>
 

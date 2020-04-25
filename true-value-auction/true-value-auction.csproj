@@ -63,11 +63,12 @@
       <DependentUpon>Users.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Pages\forgot-username-or-password.aspx" />
+    <Content Include="Pages\forgot-password.aspx" />
     <Content Include="Scripts\login.js" />
     <Content Include="Theme\bootstrap.min.css" />
     <Content Include="Theme\bootstrap.min.js" />
     <Content Include="Theme\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\login2.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -76,7 +77,6 @@
     <Content Include="Pages\Home.aspx" />
     <Content Include="packages.config" />
     <Content Include="Pages\ViewAllItems.aspx" />
-    <Content Include="Theme\login.css" />
     <Content Include="Theme\createaccount.css" />
   </ItemGroup>
   <ItemGroup>
@@ -90,12 +90,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\forgot-username-or-password.aspx.cs">
-      <DependentUpon>forgot-username-or-password.aspx</DependentUpon>
+    <Compile Include="Pages\forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\forgot-username-or-password.aspx.designer.cs">
-      <DependentUpon>forgot-username-or-password.aspx</DependentUpon>
+    <Compile Include="Pages\forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
