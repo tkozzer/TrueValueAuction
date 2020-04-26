@@ -11,7 +11,7 @@ namespace truevalueauction.Pages
 
         IValidator v;
         User user;
-        List<InputTypes> error = new List<InputTypes>();
+        List<InputTypes> errors = new List<InputTypes>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -89,7 +89,7 @@ namespace truevalueauction.Pages
                 foreach (InputTypes type in modalTypes)
                 {
                     valid = v.IsValid(type);
-                    if (!valid) error.Add(type);
+                    if (!valid) errors.Add(type);
                 }
 
                 if (v.EmailExists())
@@ -97,13 +97,24 @@ namespace truevalueauction.Pages
                     throw new ArgumentException("This email already exists");
                 }
 
-                if (error.Count == 0 && valid)
+                if (errors.Count == 0 && valid)
                 {
                     Account.CreateAccount(user);
-                    Response.Redirect("Home.aspx");
+                    Int32 userId = Database.UserId(v.GetUser());
+                    Response.Cookies["isAuth"].Value = "true";
+                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(30);
+                    if (userId == 0) throw new Exception("This user does not exist");
+                    Response.Redirect("Home.aspx?userId=" + userId.ToString());
                 }
                 else
                 {
+                    foreach(InputTypes error in errors)
+                    {
+                        if(error == InputTypes.FirstName)
+                        {
+                            throw new ArgumentException("Please make sure the first name field doesn't contain any numbers");
+                        }
+                    }
                     throw new ArgumentException("Please enter a valid input for each box");
                 }
 

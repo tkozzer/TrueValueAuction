@@ -70,6 +70,7 @@
     <Content Include="Theme\bootstrap.min.css" />
     <Content Include="Theme\bootstrap.min.js" />
     <Content Include="Theme\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\home.css" />
     <Content Include="Theme\login.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />

@@ -38,5 +38,11 @@ namespace truevalueauction.Pages
 
         }
 
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Cookies["isAuth"].Value = "false";
+            Response.Cookies["isAuth"].Expires = DateTime.Now.AddDays(-1d);
+            Response.Redirect("Home.aspx");
+        }
     }
 }
