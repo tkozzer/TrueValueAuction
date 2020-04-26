@@ -43,7 +43,7 @@ namespace truevalueauction.Pages
         {
             Response.Cookies["isAuth"].Value = "false";
             Response.Cookies["isAuth"].Expires = DateTime.Now.AddDays(-1d);
-            Response.Redirect("Home.aspx");
+            Response.Redirect("Login.aspx");
         }
     }
 }

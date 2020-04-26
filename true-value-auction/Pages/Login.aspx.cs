@@ -51,7 +51,7 @@ namespace truevalueauction.Pages
                 {
                     Int32 userId = Database.UserId(v.GetUser());
                     Response.Cookies["isAuth"].Value = "true";
-                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(30);
+                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(10);
                     if (userId == 0) throw new Exception("This user does not exist");
                     Response.Redirect("Home.aspx?userId="+ userId.ToString());
                 }
