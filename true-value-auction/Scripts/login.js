@@ -5,10 +5,10 @@ if (document.getElementById('alert') !== null) {
     setTimeout(() => document.querySelector('.alert').remove(), 5000)
 };
 
-var firstName = document.getElementById('txtRegisterFirstName');
-var email = document.getElementById('txtRegisterEmail');
-var password = document.getElementById('txtRegisterPassword');
-var confirmPassword = document.getElementById('txtRegisterConfirmPassword');
+var regFirstName = document.getElementById('txtRegisterFirstName');
+var regEmail = document.getElementById('txtRegisterEmail');
+var regPassword = document.getElementById('txtRegisterPassword');
+var regConfirmPassword = document.getElementById('txtRegisterConfirmPassword');
 
 var loginEmail = document.getElementById('txtEmail');
 var loginPassword = document.getElementById('txtPassword');
@@ -16,7 +16,9 @@ var loginPassword = document.getElementById('txtPassword');
 document.getElementById('btnLogin').addEventListener("click", () => {
     if (loginEmail.value === '' || loginPassword.value === '') {
         showAlert("Please make sure all fields are filled in", "alertBody", null);
-    } else if (!email.value.includes("@")) {
+    } else if (loginPassword.value.length < 9) {
+        showAlert("Please make sure your password is atleast 9 characters", 'alertBody', null);
+    } else if (!loginEmail.value.includes("@")) {
         showAlert("Please make sure you enter a valid email address", 'alertBody', null);
     } else {
         __doPostBack('btnLogin', 'Click');
@@ -24,13 +26,13 @@ document.getElementById('btnLogin').addEventListener("click", () => {
 })
 
 document.getElementById('btnRegister').addEventListener("click", () => {
-    if (firstName.value === "" || email.value === "" || password.value === "" || confirmPassword.value === "") {
+    if (regFirstName.value === "" || regEmail.value === "" || regPassword.value === "" || regConfirmPassword.value === "") {
         showAlert('Please make sure all fields are filled in', 'alertModal', null);
-    } else if (password.value != confirmPassword.value) {
+    } else if (regPassword.value != regConfirmPassword.value) {
         showAlert("Please make sure your passwords match", 'alertModal', null);
-    } else if (password.value.length < 9) {
+    } else if (regPassword.value.length < 9) {
         showAlert("Please make sure you password is atleast 9 characters", 'alertModal', null);
-    } else if (!email.value.includes("@")) {
+    } else if (!regEmail.value.includes("@")) {
         showAlert("Please make sure you enter a valid email address", 'alertModal', null);
     } else {
         __doPostBack('btnRegister', 'Click');

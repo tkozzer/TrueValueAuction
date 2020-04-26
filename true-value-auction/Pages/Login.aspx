@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Login</title>
     <link href="../Theme/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Theme/login2.css" rel="stylesheet" />
+    <link href="../Theme/login.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

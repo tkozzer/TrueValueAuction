@@ -28,7 +28,7 @@ namespace truevalueauction.App_Code
 
         public override bool EmailExists()
         {
-            return CheckDatabase(InputTypes.Email); 
+            return CheckDatabase(); 
         }
 
         public override bool IsValid(InputTypes type)
@@ -49,5 +49,9 @@ namespace truevalueauction.App_Code
 
         }
 
+        public override bool UserValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

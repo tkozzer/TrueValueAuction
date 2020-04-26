@@ -31,7 +31,8 @@ namespace truevalueauction.Pages
             {
                 v = new LoginValidator(new User(), false);
                 btnLogin_Click(sender, e);
-            } else
+            }
+            else
             {
                 v = new LoginValidator(new App_Code.User(), false);
             }
@@ -42,18 +43,30 @@ namespace truevalueauction.Pages
         {
             v.SetUser(new User(txtEmail.Text, txtPassword.Text));
 
-            bool emailValid = v.IsValid(InputTypes.Email);
-            bool passwordValid = v.IsValid(InputTypes.Password);
-
-
-            if (emailValid && passwordValid)
+            try
             {
-                Response.Redirect("Home.aspx");
+                bool userValid = v.UserValid();
+
+                if (userValid)
+                {
+                    Int32 userId = Database.UserId(v.GetUser());
+                    Response.Cookies["isAuth"].Value = "true";
+                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(30);
+                    if (userId == 0) throw new Exception("This user does not exist");
+                    Response.Redirect("Home.aspx?userId="+ userId.ToString());
+                }
+                else
+                {
+                    throw new Exception("Please enter a valid Email/Password");
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\">Please enter a valid Email/Password</div>";
+                alertBody.Text = "<div ID=\"alert\" class=\"alert alert-danger\">" + ex.Message + "</div>";
+
             }
+
 
         }
 
@@ -86,6 +99,7 @@ namespace truevalueauction.Pages
 
                 if (error.Count == 0 && valid)
                 {
+                    Account.CreateAccount(user);
                     Response.Redirect("Home.aspx");
                 }
                 else

@@ -45,6 +45,7 @@
       <HintPath>..\packages\smartystreets-dotnet-sdk.8.4.1\lib\net40\smartystreets-dotnet-sdk.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
@@ -69,7 +70,7 @@
     <Content Include="Theme\bootstrap.min.css" />
     <Content Include="Theme\bootstrap.min.js" />
     <Content Include="Theme\glyphicons-halflings-regular.svg" />
-    <Content Include="Theme\login2.css" />
+    <Content Include="Theme\login.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -81,6 +82,8 @@
     <Content Include="Theme\createaccount.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Account.cs" />
+    <Compile Include="App_Code\Database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

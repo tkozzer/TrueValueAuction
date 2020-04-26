@@ -21,27 +21,34 @@ namespace truevalueauction.App_Code
 
         public virtual bool IsValid(InputTypes type)
         {
+            if (!newUser)
+            {
+                CheckDatabase();
+            }
 
             Regex re = new Regex(InputTypeValue.Value(type));
             
             switch (type)
             {
                 case InputTypes.Email:
-                    return newUser ? RegexUtilities.IsValidEmail(user.GetEmail()) : CheckDatabase(type);
+                    return RegexUtilities.IsValidEmail(user.GetEmail());
                 case InputTypes.Password:
-                    return newUser ? re.IsMatch(user.GetPassword()) : CheckDatabase(type);
+                    return re.IsMatch(user.GetPassword());
                 default: return false;
             }
 
         }
 
-        protected bool CheckDatabase(InputTypes type)
+        protected bool CheckDatabase()
         {
-            if(type == InputTypes.Email)
+            if(!newUser)
             {
-                return true;
+                return Database.ValidateUser(user);
             }
-            
+            else
+            {
+                return Database.UserExists(user);
+            }
             // Dummy code until database is configured
             //if(type == InputTypes.Email)
             //{
@@ -51,13 +58,14 @@ namespace truevalueauction.App_Code
             //{
             //    return user.GetPassword() != string.Empty ? true : false;
             //}
-            return false;
+            
         }
 
         public abstract void SetNewUser(bool newUser);
         public abstract User GetUser();
         public abstract void SetUser(User user);
         public abstract bool EmailExists();
+        public abstract bool UserValid();
 
     }
 }

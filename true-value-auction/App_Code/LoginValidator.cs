@@ -42,6 +42,11 @@ namespace truevalueauction.App_Code
         {
             throw new NotImplementedException();
         }
+
+        public override bool UserValid()
+        {
+            return CheckDatabase();
+        }
     }
 }
 
