@@ -14,12 +14,13 @@ namespace truevalueauction.Pages
 
              if(Request.Cookies["isAuth"] != null)
             {
-                if (Request.Cookies["isAuth"].Value == "true")
+                if (Request.Cookies["isAuth"].Value == "true" && Request.QueryString["userId"] != null)
                 {
                     isAuth.Text = "<div class=\"h1\">isAuth: \"true\"</div>";
                 }
                 else
                 {
+                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddDays(-1d);
                     isAuth.Text = "<div class=\"h1\">isAuth: \"false\"</div>";
                 }
             } else
