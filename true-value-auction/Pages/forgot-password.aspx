@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="../Theme/bootstrap.min.css" rel="stylesheet" />
-    <link href="../Theme/login2.css" rel="stylesheet" />
+    <link href="../Theme/login.css" rel="stylesheet" />
     <title>Forgot Password</title>
 </head>
 <body>

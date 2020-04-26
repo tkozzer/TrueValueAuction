@@ -3,6 +3,8 @@ var forgotEmail = document.getElementById('txtForgotEmail');
 document.getElementById('btnSubmit').addEventListener("click", () => {
     if (forgotEmail.value === '') {
         showAlert("Please fill in the email field", 'alertForgotEmail', null);
+    } else if (!forgotEmail.value.includes("@")) {
+        showAlert("Please make sure you enter a valid email address", 'alertForgotEmail', null);
     } else {
         __doPostBack('btnSubmit', 'Click');
     }
