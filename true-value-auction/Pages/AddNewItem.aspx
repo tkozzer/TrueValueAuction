@@ -22,12 +22,15 @@
                 </div>
             </div>
         </div>
-        <div class="container main-container">
-            <div class="form-group">
+        <div id="container1" class="container main-container">
+            <asp:Literal ID="alertNewItem" runat="server"></asp:Literal>
+            <div id="form-group1" class="form-group">
                 <label>Item Name</label>
-                <input id="txtItemName" type="text" class="form-control" />
+                <asp:TextBox  id="txtItemName" type="text" class="form-control" runat="server"></asp:TextBox>
                 <label>Description</label>
-                <textarea id="txtDescription" class="form-control" rows="4" cols="10"></textarea>
+                <asp:TextBox id="txtDescription" class="form-control" rows="4" cols="10" runat="server" TextMode="MultiLine"></asp:TextBox>
+                <label>Auction Length (# of days)</label>
+                <asp:TextBox ID="txtAuctionLength" TextMode="Number" CssClass="form-control" runat="server"></asp:TextBox>
                 <label>Condition</label>
                 <asp:DropDownList ID="ddCondition" CssClass="form-control" runat="server">
                     <asp:ListItem>Perfect</asp:ListItem>
@@ -37,12 +40,14 @@
                     <asp:ListItem>Damaged/For Parts</asp:ListItem>
                 </asp:DropDownList>
                 <label>Bid Starting Price</label>
-                <input id="txtStartBid" type="text" class="form-control" />
+                <asp:TextBox id="txtStartBid" TextMode="Number" class="form-control"  runat="server"></asp:TextBox>
                 <label>Add a Photo</label>
                 <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-control" />
             </div>
+            <input id="btnSubmit" type="button" value="Submit" class="btn btn-primary" />
         </div>
     </form>
+    <script src="../Scripts/addnewitem.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../Theme/bootstrap.min.js"></script>
 </body>

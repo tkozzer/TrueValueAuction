@@ -46,11 +46,15 @@ namespace truevalueauction.Pages
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            userInfo["isAuth"] = "false";
-            userInfo["userId"] = null;
-            userInfo.Expires = DateTime.Now.AddDays(-1d);
-            Response.Cookies.Add(userInfo);
+            if (userInfo != null)
+            {
+                userInfo["isAuth"] = "false";
+                userInfo["userId"] = null;
+                userInfo.Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies.Add(userInfo);
+            }
             Response.Redirect("Login.aspx");
+
         }
 
         protected void btnAddNewItem_Click(object sender, EventArgs e)

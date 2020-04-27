@@ -65,6 +65,7 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Pages\forgot-password.aspx" />
+    <Content Include="Scripts\addnewitem.js" />
     <Content Include="Scripts\forgot-password.js" />
     <Content Include="Scripts\login.js" />
     <Content Include="Theme\bootstrap.min.css" />
@@ -84,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Account.cs" />
+    <Compile Include="App_Code\AuctionItem.cs" />
     <Compile Include="App_Code\Database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

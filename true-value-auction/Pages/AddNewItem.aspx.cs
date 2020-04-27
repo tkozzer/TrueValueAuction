@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using truevalueauction.App_Code;
 
 namespace truevalueauction.Pages
 {
@@ -10,16 +11,58 @@ namespace truevalueauction.Pages
         private static HttpCookie userInfo;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["userInfo"] != null)
+            ClientScript.GetPostBackEventReference(this, string.Empty);
+            if (!IsPostBack)
             {
-                userInfo = Request.Cookies["userInfo"];
+                if (Request.Cookies["userInfo"] != null)
+                {
+                    userInfo = Request.Cookies["userInfo"];
+                }
+                else
+                {
+                    btnLogout_Click(sender, e);
+                }
             }
-            else
+            string target = Request["__EVENTTARGET"];
+            if (target == "btnSubmit")
             {
-                btnLogout_Click(sender, e);
+                btnSubmit_Click(sender, e);
+            }
+
+
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string itemName, itemDesc, itemCondition, itemFile;
+            double itemPrice;
+            int auctionLength;
+            AuctionItem item;
+
+            itemName = txtItemName.Text;
+            itemDesc = txtDescription.Text;
+            itemCondition = ddCondition.SelectedValue;
+            itemPrice = double.Parse(txtStartBid.Text);
+            itemFile = fileUpload.FileName;
+            auctionLength = int.Parse(txtAuctionLength.Text);
+
+            item = new AuctionItem(itemName, itemDesc, itemPrice, auctionLength, itemCondition, itemFile);
+
+            try
+            {
+                Database.InsertItem(item, int.Parse(userInfo["userId"]));
+                ClearFields();
+                alertNewItem.Text = "<div ID=\"alert\" class=\"alert alert-success\"><div class:\"h3\"><strong>Success</strong></div>Item was added and auction is now live!</div>";
+
+            }
+            catch (Exception)
+            {
+                alertNewItem.Text = "<div ID=\"alert\" class=\"alert alert-danger\"><div class:\"h3\"><strong>Add Item Error</strong></div>There was an error adding you item</div>";
+
             }
 
         }
+
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
@@ -32,11 +75,23 @@ namespace truevalueauction.Pages
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            userInfo["isAuth"] = "false";
-            userInfo["userId"] = null;
-            userInfo.Expires = DateTime.Now.AddDays(-1d);
-            Response.Cookies.Add(userInfo);
+            if(userInfo != null)
+            {
+                userInfo["isAuth"] = "false";
+                userInfo["userId"] = null;
+                userInfo.Expires = DateTime.Now.AddDays(-1d);
+                Response.Cookies.Add(userInfo);
+            }
             Response.Redirect("Login.aspx");
+
+        }
+
+        private void ClearFields()
+        {
+            txtItemName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
+            txtStartBid.Text = string.Empty;
+            txtAuctionLength.Text = string.Empty;
         }
 
         //protected void Page_Load(object sender, EventArgs e)

@@ -141,6 +141,36 @@ namespace truevalueauction.App_Code
         }
 
 
+        public static void InsertItem(AuctionItem item, int userId)
+        {
+            SqlConnection con = null;
+
+            try
+            {
+                con = new SqlConnection(conString);
+                var insert = String.Format("INSERT INTO [Items] ([ItemName], [Description], [StartingPrice], [AuctionLength], [ImageURL], [DateAdded], [UserId], [ItemCondition]) VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}')", item.GetItemName(), item.GetItemDesc(), item.GetItemPrice(), item.GetAuctionLength(), item.GetFile(), DateTime.Now, userId, item.GetItemCondition());
+                SqlCommand cmd = new SqlCommand(insert, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception();
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+
+
+
+
+        }
 
 
     }
