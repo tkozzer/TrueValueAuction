@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using truevalueauction.App_Code;
 using IValidator = truevalueauction.App_Code.IValidator;
 
@@ -12,6 +13,7 @@ namespace truevalueauction.Pages
         IValidator v;
         User user;
         List<InputTypes> errors = new List<InputTypes>();
+        HttpCookie userInfo = new HttpCookie("userInfo");
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,10 +52,12 @@ namespace truevalueauction.Pages
                 if (userValid)
                 {
                     Int32 userId = Database.UserId(v.GetUser());
-                    Response.Cookies["isAuth"].Value = "true";
-                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(10);
+                    userInfo["isAuth"] = "true";
+                    userInfo["userId"] = userId.ToString();
+                    userInfo.Expires = DateTime.Now.AddMinutes(10);
                     if (userId == 0) throw new Exception("This user does not exist");
-                    Response.Redirect("Home.aspx?userId="+ userId.ToString());
+                    Response.Cookies.Add(userInfo);
+                    Response.Redirect("Home.aspx");
                 }
                 else
                 {
@@ -101,10 +105,12 @@ namespace truevalueauction.Pages
                 {
                     Account.CreateAccount(user);
                     Int32 userId = Database.UserId(v.GetUser());
-                    Response.Cookies["isAuth"].Value = "true";
-                    Response.Cookies["isAuth"].Expires = DateTime.Now.AddMinutes(30);
+                    userInfo["isAuth"] = "true";
+                    userInfo["userId"] = userId.ToString();
+                    userInfo.Expires = DateTime.Now.AddMinutes(10);
                     if (userId == 0) throw new Exception("This user does not exist");
-                    Response.Redirect("Home.aspx?userId=" + userId.ToString());
+                    Response.Cookies.Add(userInfo);
+                    Response.Redirect("Home.aspx");
                 }
                 else
                 {

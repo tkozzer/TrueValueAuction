@@ -1,247 +1,49 @@
 ﻿<%@ Page Language="C#" CodeBehind="AddNewItem.aspx.cs" Inherits="truevalueauction.Pages.AddNewItem" %>
+
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 23px;
-        }
-        .auto-style2 {
-            width: 357px;
-        }
-        .auto-style3 {
-            height: 23px;
-            width: 357px;
-        }
-        .auto-style4 {
-            height: 22px;
-        }
-        .auto-style5 {
-            height: 22px;
-            width: 357px;
-        }
-        .auto-style6 {
-            height: 22px;
-            width: 319px;
-        }
-        .auto-style7 {
-            width: 319px;
-        }
-        .auto-style8 {
-            height: 23px;
-            width: 319px;
-        }
-        .auto-style9 {
-            height: 26px;
-        }
-        .auto-style10 {
-            width: 357px;
-            height: 26px;
-        }
-        .auto-style11 {
-            width: 319px;
-            height: 26px;
-        }
-    </style>
+    <link href="../Theme/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Theme/home.css" rel="stylesheet" />
+    <title>Add New Item</title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table style="width:100%;">
-                <tr>
-                    <td>&nbsp;</td>
-                    <td colspan="2">Sell an Item</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style5"></td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style4"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Item Name:</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtItemName" runat="server"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">General Item Description:</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtDesc" runat="server" Height="95px" Width="206px"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Item Condition:</td>
-                    <td class="auto-style7">
-                        <asp:DropDownList ID="ddCondition" runat="server">
-                            <asp:ListItem>Perfect</asp:ListItem>
-                            <asp:ListItem>Excellent</asp:ListItem>
-                            <asp:ListItem>Fair</asp:ListItem>
-                            <asp:ListItem>Moderate</asp:ListItem>
-                            <asp:ListItem>Damaged/For Parts</asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style1"></td>
-                    <td class="auto-style3">Bid Starting Price:</td>
-                    <td class="auto-style8">
-                        <asp:TextBox ID="txtStartingPrice" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style1"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Bid Length in days (less than 10):</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtBidLength" runat="server"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Shipping Height</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtShipHeight" runat="server"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Shipping Length</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtShipLength" runat="server"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style1"></td>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style8"></td>
-                    <td class="auto-style1"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">&nbsp;</td>
-                    <td class="auto-style3">Shipping Depth</td>
-                    <td class="auto-style8">
-                        <asp:TextBox ID="txtShipDepth" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style1">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Shipping Weight</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtShipWeight" runat="server"></asp:TextBox>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style9"></td>
-                    <td class="auto-style10">Shipping Cost:</td>
-                    <td class="auto-style11">
-                        <asp:TextBox ID="txtShipCost" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style9"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">Add an image:</td>
-                    <td class="auto-style7">
-                        <asp:FileUpload ID="fileImage" runat="server" />
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" Width="86px" />
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
+        <div class="navbar navbar-static-top nav-main" style="background-color: #e0e0e0">
+            <div class="row" style="margin: 10px 10px 0px 10px">
+                <div class="col-sm-6">
+                    <h1><strong>True Value Auction</strong></h1>
+                </div>
+                <div class="col-sm-6" style="margin-top: 10px">
+                    <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn btn-lg btn-primary pull-right" OnClick="btnLogout_Click" />
+                    <asp:Button ID="btnProfile" runat="server" Text="Profile" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" />
+                    <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" OnClick="btnHome_Click" />
+                </div>
+            </div>
+        </div>
+        <div class="container main-container">
+            <div class="form-group">
+                <label>Item Name</label>
+                <input id="txtItemName" type="text" class="form-control" />
+                <label>Description</label>
+                <textarea id="txtDescription" class="form-control" rows="4" cols="10"></textarea>
+                <label>Condition</label>
+                <asp:DropDownList ID="ddCondition" CssClass="form-control" runat="server">
+                    <asp:ListItem>Perfect</asp:ListItem>
+                    <asp:ListItem>Excellent</asp:ListItem>
+                    <asp:ListItem>Fair</asp:ListItem>
+                    <asp:ListItem>Moderate</asp:ListItem>
+                    <asp:ListItem>Damaged/For Parts</asp:ListItem>
+                </asp:DropDownList>
+                <label>Bid Starting Price</label>
+                <input id="txtStartBid" type="text" class="form-control" />
+                <label>Add a Photo</label>
+                <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-control" />
+            </div>
         </div>
     </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../Theme/bootstrap.min.js"></script>
 </body>
 </html>
