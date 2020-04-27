@@ -71,6 +71,7 @@
     <Content Include="Scripts\forgot-password.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\profile.js" />
     <Content Include="Theme\bootstrap.min.css" />
     <Content Include="Theme\bootstrap.min.js" />
     <Content Include="Theme\glyphicons-halflings-regular.svg" />
@@ -152,6 +153,7 @@
     </Compile>
     <Compile Include="Pages\ViewAllItems.aspx.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ViewAllItems.aspx.designer.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>

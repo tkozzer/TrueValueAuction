@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using truevalueauction.App_Code;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -20,6 +21,16 @@ namespace truevalueauction.Pages
             else
             {
                 btnLogout_Click(sender, e);
+            }
+            //Response.Cookies["userId"].Value = 2.ToString();
+
+
+            string argument = Request["__EVENTARGUMENT"];
+            string target = Request["__EVENTTARGET"];
+
+            if (target == "btnDeleteItem")
+            {
+                btnDeleteItem_Click(argument);
             }
 
         }
@@ -43,6 +54,71 @@ namespace truevalueauction.Pages
             {
                 Response.Redirect("Home.aspx");
             }
+
+        }
+
+        protected void btnAddNewItem_Click(object sender, EventArgs e)
+        {
+            if (userInfo == null) btnLogout_Click(sender, e);
+            Response.Redirect("AddNewItem.aspx");
+        }
+
+        protected string GetTimeRemaining(object auctionLength, object dateAdded)
+        {
+            double timeRemaining = 0;
+            string timeType = "days";
+            if (auctionLength != null && dateAdded != null)
+            {
+
+                DateTime now = DateTime.Now;
+                DateTime added = (DateTime)dateAdded;
+                int duration = (int)auctionLength;
+
+                DateTime end = added.AddDays(duration);
+
+                timeRemaining = (end - now).TotalDays;
+                if (timeRemaining < 1)
+                {
+                    timeType = "hours";
+                    timeRemaining = (end - now).TotalHours;
+                    if (timeRemaining < 1)
+                    {
+                        timeType = "minutes";
+                        timeRemaining = (end - now).TotalMinutes;
+                        if (timeRemaining < 1)
+                        {
+                            timeType = "seconds";
+                            timeRemaining = (end - now).TotalSeconds;
+                        }
+                    }
+                }
+
+            }
+
+            return string.Format("{0} {1}", Convert.ToInt32(timeRemaining), timeType);
+        }
+
+        protected void btnEditAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDeleteItem_Click(string id)
+        {
+            int itemId = int.Parse(id);
+            int userId = int.Parse(userInfo["userId"]);
+
+            try
+            {
+                Database.DeleteItem(userId, itemId);
+                alertProfile.Text = "<div ID=\"alert\" class=\"alert alert-success text-center\"><strong>Success</strong><br/>Your item has been deleted</div>";
+            }
+            catch (Exception)
+            {
+
+                alertProfile.Text = "<div ID=\"alert\" class=\"alert alert-danger text-center\"><strong>Error</strong><br/>You cannot delete an item if it has bids.</div>";
+            }
+            
 
         }
     }
