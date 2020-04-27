@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace truevalueauction.App_Code
 {
@@ -187,14 +188,34 @@ namespace truevalueauction.App_Code
                 cmd.Connection.Close();
                 con.Close();
             }
-
-
-
-
-
-
         }
 
+        public static DataTable SearchItems(string searchQuery)
+        {
+            SqlConnection con = null;
+            DataTable searchResults = new DataTable();
+
+            try
+            {
+                con = new SqlConnection(conString);
+                string query = "SELECT [ItemId], [ItemName], [Description], [StartingPrice], [AuctionLength], [DateAdded] FROM [Items] WHERE [ItemName] LIKE '%"+searchQuery+"%' ORDER BY [DateAdded] DESC, [AuctionLength]";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                searchResults.Load(dr);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+                
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return searchResults;
+        }
 
     }
 }

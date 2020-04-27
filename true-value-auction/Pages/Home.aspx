@@ -14,7 +14,7 @@
         <div class="navbar navbar-static-top nav-main" style="background-color: #e0e0e0">
             <div class="row" style="margin: 10px 10px 0px 10px">
                 <div class="col-sm-6">
-                    <h1><strong>True Value Auction</strong></h1>
+                    <a id="home" href="Home.aspx"><h1><strong>True Value Auction</strong></h1></a>
                 </div>
                 <div class="col-sm-6" style="margin-top: 10px">
                     <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn btn-lg btn-primary pull-right" OnClick="btnLogout_Click" />
@@ -29,17 +29,17 @@
                 <div class="row" id="well1">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-6">
-                        <input id="txtSearch" type="text" placeholder="Search..." class="form-control" style="width: 100%" />
+                        <asp:TextBox id="txtSearch" type="text" placeholder="Search..." class="form-control" style="width: 100%"  runat="server"></asp:TextBox>
                     </div>
                     <div class="col-sm-2">
-                        <input id="btnSearch" type="button" value="Search" class="btn btn-primary" style="width: 100%" />
+                        <asp:Button id="btnSearch" class="btn btn-primary" style="width: 100%" runat="server" Text="Search" OnClick="btnSearch_Click" />
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
             </div>
         </div>
-
         <div class="container main-container">
+            <asp:Literal ID="alertHome" runat="server"></asp:Literal>
             <asp:ListView ID="ListItems" runat="server" DataSourceID="UsersDB">
                 <ItemTemplate>
                     <div class="container items">
@@ -51,23 +51,24 @@
                                 <span class="h3"><strong>Description</strong><br /><asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' /></span>
                             </div>
                             <div class="list-group-item">
-                                <span class="h3"><strong>Starting Price</strong><br /><asp:Label ID="StartingPriceLabel" runat="server" Text='<%# Eval("StartingPrice") %>' /></span>
+                                <span class="h3"><strong>Starting Price</strong><br /><asp:Label ID="StartingPriceLabel" runat="server" Text='<%# string.Format("{0:c}",Eval("StartingPrice")) %>' /></span>
                             </div>
                             <div class="list-group-item">
                                 <span class="h3"><strong>Time Remaining</strong><br /><asp:Label ID="AuctionLengthLabel" runat="server" Text='<%# GetTimeRemaining(Eval("AuctionLength"), Eval("DateAdded")) %>' /></span>
                             </div>
                             <div class="list-group-item">
-                                <asp:Button ID="btnBid" CssClass="btn-block btn btn-primary" runat="server" Text="Bid Now!" />
+                                <input id="btnBid<%# Eval("ItemId") %>" class="btn-block btn btn-primary" value="Bid Now!" onclick="javascript:GetItemId(<%# Eval("ItemId")%>)"/>
                             </div>
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:ListView>
-            <asp:Literal ID="isAuthLiteral" runat="server"></asp:Literal>
-            <asp:Literal ID="userIdLiteral" runat="server"></asp:Literal>
-            <asp:SqlDataSource ID="UsersDB" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>" SelectCommand="SELECT [ItemName], [Description], [StartingPrice], [AuctionLength], [DateAdded] FROM [Items] ORDER BY [DateAdded] DESC, [AuctionLength]"></asp:SqlDataSource>
+<%--            <asp:Literal ID="isAuthLiteral" runat="server"></asp:Literal>
+            <asp:Literal ID="userIdLiteral" runat="server"></asp:Literal>--%>
+            <asp:SqlDataSource ID="UsersDB" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>" SelectCommand="SELECT [ItemId], [ItemName], [Description], [StartingPrice], [AuctionLength], [DateAdded] FROM [Items] ORDER BY [DateAdded] DESC, [AuctionLength]"></asp:SqlDataSource>
         </div>
     </form>
+    <script src="../Scripts/home.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../Theme/bootstrap.min.js"></script>
 </body>

@@ -22,3 +22,21 @@
     margin: 20px;
 }
 
+.items {
+    padding: 10px 100px 0px 0px;
+}
+
+@media (max-width: 767px) {
+    .items {
+        padding: 10px 0px 0px 0px;
+    }
+
+    .col-sm-6 {
+        text-align: center
+    }
+}
+
+#home {
+    text-decoration:none;
+    
+}
