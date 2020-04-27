@@ -6,6 +6,15 @@ var file = document.getElementById("fileUpload");
 
 const btn = document.getElementById("btnSubmit");
 
+var alert = document.getElementById('alert');
+console.log(alert);
+if (alert !== null) {
+    console.log("alertLiteral not empty");
+    setTimeout(() => document.querySelector('#alert').remove(), 5000)
+};
+
+
+
 btn.addEventListener('click', () => {
     if (itemName.value === '' || itemDesc.value === '' || startBid.value === '') {
         showAlert("Please make sure all fields are filled in", "alertNewItem", null);

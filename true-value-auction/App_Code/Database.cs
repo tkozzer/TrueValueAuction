@@ -144,13 +144,35 @@ namespace truevalueauction.App_Code
         public static void InsertItem(AuctionItem item, int userId)
         {
             SqlConnection con = null;
+            string sql = "INSERT INTO [Items] ([ItemName], [Description], [StartingPrice], [AuctionLength], [ImageURL], [DateAdded], [UserId], [ItemCondition]) VALUES (@ItemName, @ItemDesc, @StartPrice, @AuctionLength, @ImageUrl, @DateAdded, @UserId, @ItemCondition)";
+            SqlCommand cmd = new SqlCommand(sql);
+            con = new SqlConnection(conString);
+
+            cmd.Parameters.Add("@ItemName", System.Data.SqlDbType.NVarChar, 50);
+            cmd.Parameters.Add("@ItemDesc", System.Data.SqlDbType.NVarChar, -1);
+            cmd.Parameters.Add("@StartPrice", System.Data.SqlDbType.Float);
+            cmd.Parameters.Add("@AuctionLength", System.Data.SqlDbType.Int);
+            cmd.Parameters.Add("@ImageUrl", System.Data.SqlDbType.NVarChar, -1);
+            cmd.Parameters.Add("@DateAdded", System.Data.SqlDbType.DateTime);
+            cmd.Parameters.Add("@UserId", System.Data.SqlDbType.Int);
+            cmd.Parameters.Add("@ItemCondition", System.Data.SqlDbType.NVarChar, 100);
+
+            cmd.Parameters["@ItemName"].Value = item.GetItemName();
+            cmd.Parameters["@ItemDesc"].Value = item.GetItemDesc();
+            cmd.Parameters["@StartPrice"].Value = item.GetItemPrice();
+            cmd.Parameters["@AuctionLength"].Value = item.GetAuctionLength();
+            cmd.Parameters["@ImageUrl"].Value = item.GetFile();
+            cmd.Parameters["@DateAdded"].Value = DateTime.Now;
+            cmd.Parameters["@UserId"].Value = userId;
+            cmd.Parameters["@ItemCondition"].Value = item.GetItemCondition();
+            cmd.Connection = con;
 
             try
             {
-                con = new SqlConnection(conString);
-                var insert = String.Format("INSERT INTO [Items] ([ItemName], [Description], [StartingPrice], [AuctionLength], [ImageURL], [DateAdded], [UserId], [ItemCondition]) VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}')", item.GetItemName(), item.GetItemDesc(), item.GetItemPrice(), item.GetAuctionLength(), item.GetFile(), DateTime.Now, userId, item.GetItemCondition());
-                SqlCommand cmd = new SqlCommand(insert, con);
-                con.Open();
+
+                //var insert = String.Format("INSERT INTO [Items] ([ItemName], [Description], [StartingPrice], [AuctionLength], [ImageURL], [DateAdded], [UserId], [ItemCondition]) VALUES ('{0}', '{1}', '{2}', '{3}','{4}', '{5}', '{6}', '{7}')", item.GetItemName(), item.GetItemDesc(), item.GetItemPrice(), item.GetAuctionLength(), item.GetFile(), DateTime.Now, userId, item.GetItemCondition());
+                //SqlCommand cmd = new SqlCommand(insert, con);
+                cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
 
             }
@@ -162,6 +184,7 @@ namespace truevalueauction.App_Code
             }
             finally
             {
+                cmd.Connection.Close();
                 con.Close();
             }
 
