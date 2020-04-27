@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" Inherits="truevalueauction.Pages.Home" CodeBehind="~/Pages/Home.aspx.cs" %>
 
+<%@ Import Namespace="System.Diagnostics" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -40,21 +42,22 @@
         <div class="container main-container">
             <asp:ListView ID="ListItems" runat="server" DataSourceID="UsersDB">
                 <ItemTemplate>
-                    <div class="container">
+                    <div class="container items">
                         <div class="list-group">
                             <div class="list-group-item">
-                                <strong><asp:Label ID="ItemNameLabel" runat="server" CssClass="h1" Text='<%# Eval("ItemName") %>' /></strong>
+                                <strong class="h1"><asp:Label ID="ItemNameLabel" runat="server" Text='<%# Eval("ItemName") %>' /></strong>
                             </div>
                             <div class="list-group-item">
-                                <asp:Label ID="DescriptionLabel" CssClass="h3" runat="server" Text='<%# Eval("Description") %>' />
+                                <span class="h3"><strong>Description</strong><br /><asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' /></span>
                             </div>
                             <div class="list-group-item">
-                                <asp:Label ID="StartingPriceLabel" runat="server" Text='<%# Eval("StartingPrice") %>' />
+                                <span class="h3"><strong>Starting Price</strong><br /><asp:Label ID="StartingPriceLabel" runat="server" Text='<%# Eval("StartingPrice") %>' /></span>
                             </div>
                             <div class="list-group-item">
-                                <asp:Label ID="AuctionLengthLabel" runat="server" Text='<%# Eval("AuctionLength") %>' />
+                                <span class="h3"><strong>Time Remaining</strong><br /><asp:Label ID="AuctionLengthLabel" runat="server" Text='<%# GetTimeRemaining(Eval("AuctionLength"), Eval("DateAdded")) %>' /></span>
                             </div>
                             <div class="list-group-item">
+                                <asp:Button ID="btnBid" CssClass="btn-block btn btn-primary" runat="server" Text="Bid Now!" />
                             </div>
                         </div>
                     </div>
@@ -62,7 +65,7 @@
             </asp:ListView>
             <asp:Literal ID="isAuthLiteral" runat="server"></asp:Literal>
             <asp:Literal ID="userIdLiteral" runat="server"></asp:Literal>
-            <asp:SqlDataSource ID="UsersDB" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>" SelectCommand="SELECT [ItemName], [Description], [StartingPrice], [AuctionLength] FROM [Items] ORDER BY [DateAdded] DESC, [AuctionLength]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="UsersDB" runat="server" ConnectionString="<%$ ConnectionStrings:Users %>" SelectCommand="SELECT [ItemName], [Description], [StartingPrice], [AuctionLength], [DateAdded] FROM [Items] ORDER BY [DateAdded] DESC, [AuctionLength]"></asp:SqlDataSource>
         </div>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -62,5 +62,26 @@ namespace truevalueauction.Pages
             if (userInfo == null) btnLogout_Click(sender, e);
             Response.Redirect("AddNewItem.aspx");
         }
+
+        protected double GetTimeRemaining(object auctionLength, object dateAdded)
+        {
+            double timeRemaining = 0;
+            if (auctionLength != null && dateAdded != null)
+            {
+                DateTime now = DateTime.Now;
+                DateTime added = (DateTime)dateAdded;
+                int duration = (int)auctionLength;
+
+                DateTime end = added.AddDays(duration);
+
+                timeRemaining = (end - now).TotalDays;
+
+                
+            }
+
+            return timeRemaining;
+        }
+
+    
     }
 }
