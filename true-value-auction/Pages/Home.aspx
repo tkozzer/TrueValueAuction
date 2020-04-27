@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-sm-6" style="margin-top: 10px">
                     <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn btn-lg btn-primary pull-right" OnClick="btnLogout_Click" />
-                    <asp:Button ID="btnProfile" runat="server" Text="Profile" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" />
+                    <asp:Button ID="btnProfile" runat="server" Text="Profile" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" OnClick="btnProfile_Click" />
                     <asp:Button ID="btnAddNewItem" runat="server" Text="Add Item" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" OnClick="btnAddNewItem_Click" />
                     <a class="btn btn-lg btn-primary pull-right" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-right: 5px">Search
                     </a>

@@ -6,7 +6,7 @@
 <head runat="server">
     <link href="../Theme/bootstrap.min.css" rel="stylesheet" />
     <link href="../Theme/home.css" rel="stylesheet" />
-    <title><%# Eval("ItemName") %></title>
+    <title id="itemName" runat="server"></title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,12 +17,13 @@
                 </div>
                 <div class="col-sm-6" style="margin-top: 10px">
                     <asp:Button ID="btnLogout" runat="server" Text="Logout" CssClass="btn btn-lg btn-primary pull-right" OnClick="btnLogout_Click" />
-                    <asp:Button ID="btnProfile" runat="server" Text="Profile" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" />
+                    <asp:Button ID="btnProfile" runat="server" Text="Profile" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" OnClick="btnProfile_Click"/>
                     <asp:Button ID="btnHome" runat="server" Text="Home" CssClass="btn btn-lg btn-primary pull-right" Style="margin-right: 5px" OnClick="btnHome_Click" />
                 </div>
             </div>
         </div>
-        <div class="container main-container">
+        <div id="container1" class="container main-container">
+            <div id="placeholder" class="hidden"></div>
             <asp:Literal ID="alertViewItem" runat="server"></asp:Literal>
             <asp:ListView ID="ListItems" runat="server" DataSourceID="UsersDB">
                 <ItemTemplate>
@@ -45,10 +46,15 @@
                                     <asp:Label ID="AuctionLengthLabel" runat="server" Text='<%# GetTimeRemaining(Eval("AuctionLength"), Eval("DateAdded")) %>' /></span>
                             </div>
                             <div class="list-group-item">
-                                <input id="btnBid" class="btn-block btn btn-primary" value="Bid Now!" />
+                                <div class="form-group">
+                                    <label>Enter your Bid:</label>
+                                    <input id="txtBid" class="form-inline" style="width:25%" type="text" />
+                                    <input id="btnPlaceBid" class="btn btn-primary" value="Place Bid" placeholder="Please enter the price you would pay for this item"/>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div style="display:none"><%# itemName.Text = (string)Eval("ItemName") %></div>
                 </ItemTemplate>
             </asp:ListView>
         </div>

@@ -65,6 +65,7 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Pages\forgot-password.aspx" />
+    <Content Include="Pages\Profile.aspx" />
     <Content Include="Pages\ViewItem.aspx" />
     <Content Include="Scripts\addnewitem.js" />
     <Content Include="Scripts\forgot-password.js" />
@@ -142,6 +143,13 @@
     <Compile Include="App_Code\AccountValidator.cs" />
     <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
+    <Compile Include="Pages\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ViewAllItems.aspx.cs">
       <DependentUpon>ViewAllItems.aspx</DependentUpon>
     </Compile>

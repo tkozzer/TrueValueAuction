@@ -39,6 +39,28 @@ namespace truevalueauction.App_Code
             }
         }
 
+        public static void InsertBid(double bid, int userId, int itemId)
+        {
+            SqlConnection con = null;
+
+            try
+            {
+                con = new SqlConnection(conString);
+                var insertBid = String.Format("INSERT INTO [Bids] ([UserId], [ItemId], [Amount], [BidTime]) VALUES ('{0}','{1}','{2}','{3}')", userId, itemId, bid, DateTime.Now );
+                SqlCommand cmd = new SqlCommand(insertBid, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         public static bool ValidateUser(User user)
         {
             SqlCommand cmd;

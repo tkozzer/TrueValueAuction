@@ -141,6 +141,12 @@ namespace truevalueauction.Pages
             Response.Redirect("ViewItem.aspx?itemId=" + argument );
         }
 
-
+        protected void btnProfile_Click(object sender, EventArgs e)
+        {
+            string userId = userInfo["userId"];
+            Response.Cookies["userId"].Value = userId;
+            Response.Cookies["userId"].Expires = DateTime.Now.AddMinutes(10);
+            Response.Redirect("Profile.aspx");
+        }
     }
 }
