@@ -60,7 +60,7 @@
             <tr>
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style6">
-                    <asp:Image ID="Image1" runat="server" Height="235px" Width="312px" />
+                    <asp:Image ID="Image1" runat="server" Height="235px" Width="312px" ImageUrl="~/App_Data/dsc07890_1.jpg" />
                 </td>
                 <td class="auto-style2">&nbsp;</td>
                 <td>Current Bid:
@@ -100,7 +100,9 @@
                 <td class="auto-style1">&nbsp;</td>
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>Description:
+                    <asp:Label ID="lblDescription" runat="server"></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style1">&nbsp;</td>
