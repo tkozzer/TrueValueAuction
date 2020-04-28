@@ -44,7 +44,7 @@
                 <label>Add a Photo</label>
                 <asp:FileUpload ID="fileUpload" runat="server" CssClass="form-control" />
             </div>
-            <input id="btnSubmit" type="button" value="Submit" class="btn btn-primary" />
+            <input id="btnSubmit" type="button" value="Submit" class="btn btn-primary"  />
         </div>
     </form>
     <script src="../Scripts/addnewitem.js"></script>

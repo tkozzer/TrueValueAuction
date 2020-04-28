@@ -32,6 +32,18 @@ namespace truevalueauction.Pages
 
         }
 
+        private bool ValidateImage()
+        {
+
+            HttpPostedFile theFile = fileUpload.PostedFile;
+            if (!theFile.FileName.Contains(".png") || !theFile.FileName.Contains(".jpg"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string itemName, itemDesc, itemCondition, itemFile;
@@ -50,10 +62,15 @@ namespace truevalueauction.Pages
 
             try
             {
+                if (!ValidateImage()) throw new ArgumentException("Please make sure your file upload is either a .png or .jpg");
                 Database.InsertItem(item, int.Parse(userInfo["userId"]));
                 ClearFields();
                 alertNewItem.Text = "<div ID=\"alert\" class=\"alert alert-success\"><div class:\"h3\"><strong>Success</strong></div>Item was added and auction is now live!</div>";
 
+            }
+            catch(ArgumentException ex)
+            {
+                alertNewItem.Text = "<div ID=\"alert\" class=\"alert alert-danger\"><div class:\"h3\"><strong>Add Item Error</strong></div>"+ex.Message+"</div>";
             }
             catch (Exception)
             {
