@@ -19,9 +19,7 @@ btn.addEventListener('click', () => {
     if (itemName.value === '' || itemDesc.value === '' || startBid.value === '') {
         showAlert("Please make sure all fields are filled in", "alertNewItem", null);
     } else if (!isNumeric(startBid.value)) {
-        showAlert("Please make sure that starting price is a number", "alertNewItem", null);
-    } else if((!fileInput.files[0].name.match(/.(jpg|jpeg|png|gif)$/i))){
-
+        showAlert("Please make sure that starting price is a number", "alertNewItem", null); 
     } else {
         __doPostBack("btnSubmit", "Click");
     }
