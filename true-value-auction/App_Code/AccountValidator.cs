@@ -5,6 +5,7 @@ namespace truevalueauction.App_Code
 {
     public class AccountValidator : Validator
     {
+       
         public AccountValidator(User user) : base(user)
         {
             SetNewUser(true);
@@ -25,9 +26,14 @@ namespace truevalueauction.App_Code
             this.newUser = newUser;
         }
 
+        public override bool EmailExists()
+        {
+            return CheckDatabase(); 
+        }
+
         public override bool IsValid(InputTypes type)
         {
-            if (type == InputTypes.Username || type == InputTypes.Password) return base.IsValid(type);
+            if (type == InputTypes.Email || type == InputTypes.Password) return base.IsValid(type);
             Regex re = new Regex(InputTypeValue.Value(type));
             switch (type)
             {
@@ -35,8 +41,6 @@ namespace truevalueauction.App_Code
                     return re.IsMatch(user.GetFirstName());
                 case InputTypes.LastName:
                     return re.IsMatch(user.GetLastName());
-                case InputTypes.Email:
-                    return RegexUtilities.IsValidEmail(user.GetEmail());
                 case InputTypes.FullAddress:
                     return AddressAPI.IsAddressValid(user);
                 default:
@@ -45,5 +49,9 @@ namespace truevalueauction.App_Code
 
         }
 
+        public override bool UserValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -45,8 +45,10 @@
       <HintPath>..\packages\smartystreets-dotnet-sdk.8.4.1\lib\net40\smartystreets-dotnet-sdk.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -62,6 +64,19 @@
       <DependentUpon>Users.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Pages\forgot-password.aspx" />
+    <Content Include="Pages\Profile.aspx" />
+    <Content Include="Pages\ViewItem.aspx" />
+    <Content Include="Scripts\addnewitem.js" />
+    <Content Include="Scripts\forgot-password.js" />
+    <Content Include="Scripts\home.js" />
+    <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\profile.js" />
+    <Content Include="Theme\bootstrap.min.css" />
+    <Content Include="Theme\bootstrap.min.js" />
+    <Content Include="Theme\glyphicons-halflings-regular.svg" />
+    <Content Include="Theme\home.css" />
+    <Content Include="Theme\login.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Pages\Login.aspx" />
@@ -69,8 +84,13 @@
     <Content Include="Pages\AddNewItem.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Pages\ViewAllItems.aspx" />
+    <Content Include="Theme\createaccount.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Account.cs" />
+    <Compile Include="App_Code\AuctionItem.cs" />
+    <Compile Include="App_Code\Database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -80,6 +100,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\forgot-password.aspx.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\forgot-password.aspx.designer.cs">
+      <DependentUpon>forgot-password.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -117,10 +144,37 @@
     <Compile Include="App_Code\AccountValidator.cs" />
     <Compile Include="App_Code\Utilities\RegexUtilities.cs" />
     <Compile Include="App_Code\Utilities\AddressAPI.cs" />
+    <Compile Include="Pages\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewAllItems.aspx.cs">
+      <DependentUpon>ViewAllItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewAllItems.aspx.designer.cs">
+      <DependentUpon>ViewAllItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewItem.aspx.cs">
+      <DependentUpon>ViewItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewItem.aspx.designer.cs">
+      <DependentUpon>ViewItem.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Theme\bootstrap.min.css.map" />
+    <Content Include="Theme\glyphicons-halflings-regular.eot" />
+    <Content Include="Theme\glyphicons-halflings-regular.ttf" />
+    <Content Include="Theme\glyphicons-halflings-regular.woff" />
+    <Content Include="Theme\glyphicons-halflings-regular.woff2" />
     <None Include="Web.SECRETS.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

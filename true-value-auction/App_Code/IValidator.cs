@@ -7,5 +7,7 @@ namespace truevalueauction.App_Code
         void SetUser(User user);
         void SetNewUser(bool newUser);
         bool IsValid(InputTypes input);
+        bool EmailExists();
+        bool UserValid();
     }
 }

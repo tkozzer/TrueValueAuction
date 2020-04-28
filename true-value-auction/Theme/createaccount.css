@@ -1,0 +1,120 @@
+﻿body {
+    background-color: #345eeb;
+    font-family: 'Raleway', sans-serif;
+}
+
+.main {
+    background-color: #e0e0e0;
+    width: 600px;
+    height: 100%;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.un {
+    width: 250px;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #1535eb, #8394f2);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    margin-left: 25%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.auto-style1 {
+    width: 102px;
+}
+
+.auto-style3 {
+    height: 23px;
+    width: 458px;
+}
+
+.auto-style4 {
+    width: 458px;
+}
+
+.auto-style7 {
+    height: 23px;
+    width: 617px;
+}
+
+.auto-style8 {
+    width: 617px;
+}
+
+.auto-style9 {
+    height: 23px;
+    width: 367px;
+}
+
+.auto-style10 {
+    width: 367px;
+}
+
+.auto-style11 {
+    height: 23px;
+    width: 349px;
+}
+
+.auto-style12 {
+    width: 349px;
+}
+
+.auto-style13 {
+    width: 100%;
+}
+
+.auto-style14 {
+    height: 23px;
+}
+
+.auto-style15 {
+    height: 23px;
+    width: 775px;
+    
+}
+
+.auto-style16 {
+    width: 775px;
+}
+
+.auto-style17 {
+    height: 23px;
+    width: 321px;
+}
+
+.auto-style18 {
+    width: 321px;
+    align-content: center;
+}
+
+.auto-style19 {
+    margin-left: 126px;
+}
+
