@@ -264,5 +264,30 @@ namespace truevalueauction.App_Code
             }
         }
 
+        public static void DeleteAccount(int userId)
+        {
+            SqlConnection con = null;
+
+            try
+            {
+                con = new SqlConnection(conString);
+                var insert = String.Format("DELETE FROM [Users] WHERE [UserId] = {0}", userId);
+                SqlCommand cmd = new SqlCommand(insert, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception();
+
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
     }
 }

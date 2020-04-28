@@ -121,5 +121,25 @@ namespace truevalueauction.Pages
             
 
         }
+
+        protected void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            int userId = int.Parse(userInfo["userId"]);
+
+            try
+            {
+                Database.DeleteAccount(userId);
+                alertProfile.Text = "<div ID=\"alert\" class=\"alert alert-success text-center\"><strong>Success</strong><br/>Your account has been deleted</div>";
+                btnLogout_Click(sender, e);
+            }
+            catch (Exception)
+            {
+
+                alertProfile.Text = "<div ID=\"alert\" class=\"alert alert-danger text-center\"><strong>Error</strong><br/>There seems to be problem deleting this account. If you have active auctions or bids,<br/> you must wait till they expire.</div>";
+            }
+
+
+        }
+
     }
 }

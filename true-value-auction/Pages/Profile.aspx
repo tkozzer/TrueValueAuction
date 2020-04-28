@@ -58,7 +58,7 @@
                                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("RegisterDate", "{0:MMM dd, yyyy}")%>' /></span>
                                     </div>
                                     <asp:Button ID="btnEditUserInfo" CssClass="btn btn-block btn-primary" runat="server" Text="Edit" />
-                                    <asp:Button ID="btnDeleteAccount" CssClass="btn btn-block btn-danger" runat="server" Text="DELETE ACCOUNT" />
+                                    <asp:Button ID="btnDeleteAccount" CssClass="btn btn-block btn-danger" runat="server" Text="DELETE ACCOUNT" OnClick="btnDeleteAccount_Click" />
                                 </div>
                             </div>
                         </ItemTemplate>
@@ -212,7 +212,7 @@
                                             <asp:Label ID="AuctionLengthLabel" runat="server" Text='<%# GetTimeRemaining(Eval("AuctionLength"), Eval("DateAdded")) %>' /></span>
                                     </div>
                                     <input id="btnEdit<%# Eval("ItemId") %>" class="btn-block btn btn-primary form-inline" value="Edit" onclick="" />
-                                    <input id="btnDelete<%# Eval("ItemId") %>" class="btn-block btn btn-danger" value="Delete" onclick="javascript:GetItemId(<%# Eval("ItemId")%>)" />
+                                    <input id="btnDelete<%# Eval("ItemId") %>" class="btn-block btn btn-danger" value="Delete" onclick="javascript: GetItemId(<%# Eval("ItemId")%>)" />
                                 </div>
                             </div>
                         </ItemTemplate>
